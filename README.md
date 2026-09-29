@@ -15,7 +15,7 @@ support.
 
 ## Website Live on:
 
-# | https://terra-cascade-dancing-with-the-sa-r.vercel.app/ |
+#  https://terra-cascade-dancing-with-the-sa-r.vercel.app/ 
 
 ---
 
