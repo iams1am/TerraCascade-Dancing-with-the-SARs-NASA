@@ -1,6 +1,6 @@
 # TerraCascade
 
-> A transparent radar-data explorer for the NASA Space Apps Challenge 2026  
+> A radar-data explorer for the NASA Space Apps Challenge 2026  
 > **Challenge:** Dancing with the SARs
 
 TerraCascade is an interactive web project for exploring a documented
@@ -12,6 +12,10 @@ The project is designed for people who may not work with synthetic aperture
 radar every day. It aims to make the data easier to inspect without hiding the
 scientific details or suggesting conclusions that the current sample cannot
 support.
+
+## Website Live on:
+
+[https://terra-cascade-dancing-with-the-sa-r.vercel.app/ .
 
 [Run the web app](#quick-start) ·
 [Review the methodology](docs/methodology/README.md) ·
