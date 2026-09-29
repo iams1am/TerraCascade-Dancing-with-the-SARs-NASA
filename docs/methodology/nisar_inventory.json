@@ -1,0 +1,3129 @@
+[
+  {
+    "filename": "data\\raw\\NISAR_L2_PR_GUNW_001_030_A_019_002_2000_SH_20081012T060911_20081012T060925_20081127T061000_20081127T061014_D00404_N_F_J_001.h5",
+    "inventory": {
+      "file_type": "HDF5",
+      "root_attributes": {
+        "Conventions": "CF-1.7",
+        "contact": "nisar-sds-ops@jpl.nasa.gov",
+        "institution": "NASA JPL",
+        "mission_name": "NISAR",
+        "reference_document": "D-102272 NISAR NASA SDS Product Specification L2 Geocoded Unwrapped Interferogram",
+        "title": "NISAR L2 GUNW Product"
+      },
+      "groups": [
+        "science",
+        "science/LSAR",
+        "science/LSAR/GUNW",
+        "science/LSAR/GUNW/grids",
+        "science/LSAR/GUNW/grids/frequencyA",
+        "science/LSAR/GUNW/grids/frequencyA/pixelOffsets",
+        "science/LSAR/GUNW/grids/frequencyA/pixelOffsets/HH",
+        "science/LSAR/GUNW/grids/frequencyA/unwrappedInterferogram",
+        "science/LSAR/GUNW/grids/frequencyA/unwrappedInterferogram/HH",
+        "science/LSAR/GUNW/grids/frequencyA/wrappedInterferogram",
+        "science/LSAR/GUNW/grids/frequencyA/wrappedInterferogram/HH",
+        "science/LSAR/GUNW/metadata",
+        "science/LSAR/GUNW/metadata/attitude",
+        "science/LSAR/GUNW/metadata/attitude/reference",
+        "science/LSAR/GUNW/metadata/attitude/secondary",
+        "science/LSAR/GUNW/metadata/orbit",
+        "science/LSAR/GUNW/metadata/orbit/reference",
+        "science/LSAR/GUNW/metadata/orbit/secondary",
+        "science/LSAR/GUNW/metadata/processingInformation",
+        "science/LSAR/GUNW/metadata/processingInformation/algorithms",
+        "science/LSAR/GUNW/metadata/processingInformation/algorithms/coregistration",
+        "science/LSAR/GUNW/metadata/processingInformation/algorithms/geocoding",
+        "science/LSAR/GUNW/metadata/processingInformation/algorithms/interferogramFormation",
+        "science/LSAR/GUNW/metadata/processingInformation/algorithms/ionosphereEstimation",
+        "science/LSAR/GUNW/metadata/processingInformation/algorithms/unwrapping",
+        "science/LSAR/GUNW/metadata/processingInformation/algorithms/unwrapping/preprocessing",
+        "science/LSAR/GUNW/metadata/processingInformation/inputs",
+        "science/LSAR/GUNW/metadata/processingInformation/parameters",
+        "science/LSAR/GUNW/metadata/processingInformation/parameters/common",
+        "science/LSAR/GUNW/metadata/processingInformation/parameters/common/frequencyA",
+        "science/LSAR/GUNW/metadata/processingInformation/parameters/geocoding",
+        "science/LSAR/GUNW/metadata/processingInformation/parameters/ionosphere",
+        "science/LSAR/GUNW/metadata/processingInformation/parameters/pixelOffsets",
+        "science/LSAR/GUNW/metadata/processingInformation/parameters/pixelOffsets/frequencyA",
+        "science/LSAR/GUNW/metadata/processingInformation/parameters/reference",
+        "science/LSAR/GUNW/metadata/processingInformation/parameters/reference/frequencyA",
+        "science/LSAR/GUNW/metadata/processingInformation/parameters/secondary",
+        "science/LSAR/GUNW/metadata/processingInformation/parameters/secondary/frequencyA",
+        "science/LSAR/GUNW/metadata/processingInformation/parameters/unwrappedInterferogram",
+        "science/LSAR/GUNW/metadata/processingInformation/parameters/unwrappedInterferogram/frequencyA",
+        "science/LSAR/GUNW/metadata/processingInformation/parameters/wrappedInterferogram",
+        "science/LSAR/GUNW/metadata/processingInformation/parameters/wrappedInterferogram/frequencyA",
+        "science/LSAR/GUNW/metadata/radarGrid",
+        "science/LSAR/identification"
+      ],
+      "datasets": [
+        {
+          "path": "science/LSAR/GUNW/grids/frequencyA/centerFrequency",
+          "shape": [],
+          "dtype": "float64",
+          "attributes": {
+            "description": "Center frequency of the processed image in hertz",
+            "units": "hertz"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/grids/frequencyA/listOfPolarizations",
+          "shape": [
+            1
+          ],
+          "dtype": "|S2",
+          "attributes": {
+            "description": "List of processed polarization layers with frequency A"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/grids/frequencyA/pixelOffsets/HH/alongTrackOffset",
+          "shape": [
+            1555,
+            1136
+          ],
+          "dtype": "float32",
+          "attributes": {
+            "DIMENSION_LIST": [
+              [
+                "<HDF5 object reference>"
+              ],
+              [
+                "<HDF5 object reference>"
+              ]
+            ],
+            "_FillValue": NaN,
+            "description": "Along-track offset",
+            "grid_mapping": "projection",
+            "max_value": 1.80124032497406,
+            "mean_value": -0.0760180726647377,
+            "min_value": -109.14360809326172,
+            "sample_stddev": 1.2829829454421997,
+            "units": "meters"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/grids/frequencyA/pixelOffsets/HH/correlationSurfacePeak",
+          "shape": [
+            1555,
+            1136
+          ],
+          "dtype": "float32",
+          "attributes": {
+            "DIMENSION_LIST": [
+              [
+                "<HDF5 object reference>"
+              ],
+              [
+                "<HDF5 object reference>"
+              ]
+            ],
+            "_FillValue": NaN,
+            "description": "Normalized cross-correlation surface peak",
+            "grid_mapping": "projection",
+            "max_value": 0.9672245979309082,
+            "mean_value": 0.2669883668422699,
+            "min_value": 0.0061399685218930244,
+            "sample_stddev": 0.17930035293102264,
+            "units": "1"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/grids/frequencyA/pixelOffsets/HH/projection",
+          "shape": [],
+          "dtype": "uint32",
+          "attributes": {
+            "description": "Product map grid projection: EPSG code, with additional projection information as HDF5 Attributes",
+            "ellipsoid": "WGS84",
+            "epsg_code": 32611,
+            "false_easting": 500000.0,
+            "false_northing": 0.0,
+            "grid_mapping_name": "transverse_mercator",
+            "inverse_flattening": 298.257223563,
+            "latitude_of_projection_origin": 0.0,
+            "longitude_of_central_meridian": -117.0,
+            "longitude_of_projection_origin": 0.0,
+            "scale_factor_at_central_meridian": 0.9996,
+            "semi_major_axis": 6378137.0,
+            "spatial_ref": "PROJCS[\"WGS 84 / UTM zone 11N\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0,AUTHORITY[\"EPSG\",\"8901\"]],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],PROJECTION[\"Transverse_Mercator\"],PARAMETER[\"latitude_of_origin\",0],PARAMETER[\"central_meridian\",-117],PARAMETER[\"scale_factor\",0.9996],PARAMETER[\"false_easting\",500000],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH],AUTHORITY[\"EPSG\",\"32611\"]]",
+            "utm_zone_number": 11
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/grids/frequencyA/pixelOffsets/HH/slantRangeOffset",
+          "shape": [
+            1555,
+            1136
+          ],
+          "dtype": "float32",
+          "attributes": {
+            "DIMENSION_LIST": [
+              [
+                "<HDF5 object reference>"
+              ],
+              [
+                "<HDF5 object reference>"
+              ]
+            ],
+            "_FillValue": NaN,
+            "description": "Slant range offset",
+            "grid_mapping": "projection",
+            "max_value": 1.6592535972595215,
+            "mean_value": -0.6131361126899719,
+            "min_value": -7.574279308319092,
+            "sample_stddev": 0.2058524638414383,
+            "units": "meters"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/grids/frequencyA/pixelOffsets/HH/xCoordinateSpacing",
+          "shape": [],
+          "dtype": "float64",
+          "attributes": {
+            "description": "Nominal spacing in meters between consecutive pixels",
+            "long_name": "X coordinates spacing",
+            "units": "meters"
+          },
+          "candidate": true
+        },
+        {
+          "path": "science/LSAR/GUNW/grids/frequencyA/pixelOffsets/HH/xCoordinates",
+          "shape": [
+            1136
+          ],
+          "dtype": "float64",
+          "attributes": {
+            "CLASS": "DIMENSION_SCALE",
+            "NAME": "",
+            "REFERENCE_LIST": [
+              [
+                "<HDF5 object reference>",
+                1
+              ],
+              [
+                "<HDF5 object reference>",
+                1
+              ],
+              [
+                "<HDF5 object reference>",
+                1
+              ]
+            ],
+            "description": "X coordinates in specified projection",
+            "long_name": "X coordinate of projection",
+            "standard_name": "projection_x_coordinate",
+            "units": "meters"
+          },
+          "candidate": true
+        },
+        {
+          "path": "science/LSAR/GUNW/grids/frequencyA/pixelOffsets/HH/yCoordinateSpacing",
+          "shape": [],
+          "dtype": "float64",
+          "attributes": {
+            "description": "Nominal spacing in meters between consecutive lines",
+            "long_name": "Y coordinates spacing",
+            "units": "meters"
+          },
+          "candidate": true
+        },
+        {
+          "path": "science/LSAR/GUNW/grids/frequencyA/pixelOffsets/HH/yCoordinates",
+          "shape": [
+            1555
+          ],
+          "dtype": "float64",
+          "attributes": {
+            "CLASS": "DIMENSION_SCALE",
+            "NAME": "",
+            "REFERENCE_LIST": [
+              [
+                "<HDF5 object reference>",
+                0
+              ],
+              [
+                "<HDF5 object reference>",
+                0
+              ],
+              [
+                "<HDF5 object reference>",
+                0
+              ]
+            ],
+            "description": "Y coordinates in specified projection",
+            "long_name": "Y coordinate of projection",
+            "standard_name": "projection_y_coordinate",
+            "units": "meters"
+          },
+          "candidate": true
+        },
+        {
+          "path": "science/LSAR/GUNW/grids/frequencyA/pixelOffsets/mask",
+          "shape": [
+            1555,
+            1136
+          ],
+          "dtype": "uint8",
+          "attributes": {
+            "DIMENSION_LIST": [
+              [
+                "<HDF5 object reference>"
+              ],
+              [
+                "<HDF5 object reference>"
+              ]
+            ],
+            "_FillValue": 255,
+            "description": "Combination of water mask and a mask of subswaths of valid samples in the reference RSLC and geometrically-coregistered secondary RSLC. Each pixel value is a three-digit number: the most significant digit represents the water flag of that pixel in the reference RSLC, where 1 is water and 0 is non-water; the second digit represents the subswath number of that pixel in the reference RSLC; the least-significant digit represents the subswath number of that pixel in the secondary RSLC. A value of '0' in either subswath digit indicates an invalid sample in the corresponding RSLC",
+            "grid_mapping": "projection",
+            "percentage_water": 0.20045232502908739,
+            "valid_min": 0
+          },
+          "candidate": true
+        },
+        {
+          "path": "science/LSAR/GUNW/grids/frequencyA/pixelOffsets/projection",
+          "shape": [],
+          "dtype": "uint32",
+          "attributes": {
+            "description": "Product map grid projection: EPSG code, with additional projection information as HDF5 Attributes",
+            "ellipsoid": "WGS84",
+            "epsg_code": 32611,
+            "false_easting": 500000.0,
+            "false_northing": 0.0,
+            "grid_mapping_name": "transverse_mercator",
+            "inverse_flattening": 298.257223563,
+            "latitude_of_projection_origin": 0.0,
+            "longitude_of_central_meridian": -117.0,
+            "longitude_of_projection_origin": 0.0,
+            "scale_factor_at_central_meridian": 0.9996,
+            "semi_major_axis": 6378137.0,
+            "spatial_ref": "PROJCS[\"WGS 84 / UTM zone 11N\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0,AUTHORITY[\"EPSG\",\"8901\"]],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],PROJECTION[\"Transverse_Mercator\"],PARAMETER[\"latitude_of_origin\",0],PARAMETER[\"central_meridian\",-117],PARAMETER[\"scale_factor\",0.9996],PARAMETER[\"false_easting\",500000],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH],AUTHORITY[\"EPSG\",\"32611\"]]",
+            "utm_zone_number": 11
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/grids/frequencyA/pixelOffsets/xCoordinateSpacing",
+          "shape": [],
+          "dtype": "float64",
+          "attributes": {
+            "description": "Nominal spacing in meters between consecutive pixels",
+            "long_name": "X coordinates spacing",
+            "units": "meters"
+          },
+          "candidate": true
+        },
+        {
+          "path": "science/LSAR/GUNW/grids/frequencyA/pixelOffsets/xCoordinates",
+          "shape": [
+            1136
+          ],
+          "dtype": "float64",
+          "attributes": {
+            "CLASS": "DIMENSION_SCALE",
+            "NAME": "",
+            "REFERENCE_LIST": [
+              [
+                "<HDF5 object reference>",
+                1
+              ]
+            ],
+            "description": "X coordinates in specified projection",
+            "long_name": "X coordinate of projection",
+            "standard_name": "projection_x_coordinate",
+            "units": "meters"
+          },
+          "candidate": true
+        },
+        {
+          "path": "science/LSAR/GUNW/grids/frequencyA/pixelOffsets/yCoordinateSpacing",
+          "shape": [],
+          "dtype": "float64",
+          "attributes": {
+            "description": "Nominal spacing in meters between consecutive lines",
+            "long_name": "Y coordinates spacing",
+            "units": "meters"
+          },
+          "candidate": true
+        },
+        {
+          "path": "science/LSAR/GUNW/grids/frequencyA/pixelOffsets/yCoordinates",
+          "shape": [
+            1555
+          ],
+          "dtype": "float64",
+          "attributes": {
+            "CLASS": "DIMENSION_SCALE",
+            "NAME": "",
+            "REFERENCE_LIST": [
+              [
+                "<HDF5 object reference>",
+                0
+              ]
+            ],
+            "description": "Y coordinates in specified projection",
+            "long_name": "Y coordinate of projection",
+            "standard_name": "projection_y_coordinate",
+            "units": "meters"
+          },
+          "candidate": true
+        },
+        {
+          "path": "science/LSAR/GUNW/grids/frequencyA/unwrappedInterferogram/HH/coherenceMagnitude",
+          "shape": [
+            1555,
+            1136
+          ],
+          "dtype": "float32",
+          "attributes": {
+            "DIMENSION_LIST": [
+              [
+                "<HDF5 object reference>"
+              ],
+              [
+                "<HDF5 object reference>"
+              ]
+            ],
+            "_FillValue": NaN,
+            "description": "Coherence magnitude between HH layers",
+            "grid_mapping": "projection",
+            "max_value": 0.977408766746521,
+            "mean_value": 0.4138314425945282,
+            "min_value": 0.008420306257903576,
+            "sample_stddev": 0.1376485675573349,
+            "units": "1"
+          },
+          "candidate": true
+        },
+        {
+          "path": "science/LSAR/GUNW/grids/frequencyA/unwrappedInterferogram/HH/connectedComponents",
+          "shape": [
+            1555,
+            1136
+          ],
+          "dtype": "uint16",
+          "attributes": {
+            "DIMENSION_LIST": [
+              [
+                "<HDF5 object reference>"
+              ],
+              [
+                "<HDF5 object reference>"
+              ]
+            ],
+            "_FillValue": 65535,
+            "description": "Connected components for HH layer",
+            "grid_mapping": "projection",
+            "units": "1"
+          },
+          "candidate": true
+        },
+        {
+          "path": "science/LSAR/GUNW/grids/frequencyA/unwrappedInterferogram/HH/ionospherePhaseScreen",
+          "shape": [
+            1555,
+            1136
+          ],
+          "dtype": "float32",
+          "attributes": {
+            "DIMENSION_LIST": [
+              [
+                "<HDF5 object reference>"
+              ],
+              [
+                "<HDF5 object reference>"
+              ]
+            ],
+            "_FillValue": NaN,
+            "description": "Ionosphere phase screen",
+            "grid_mapping": "projection",
+            "max_value": 91.17967987060547,
+            "mean_value": 89.69226837158203,
+            "min_value": 84.37708282470703,
+            "sample_stddev": 0.6007050275802612,
+            "units": "radians"
+          },
+          "candidate": true
+        },
+        {
+          "path": "science/LSAR/GUNW/grids/frequencyA/unwrappedInterferogram/HH/ionospherePhaseScreenUncertainty",
+          "shape": [
+            1555,
+            1136
+          ],
+          "dtype": "float32",
+          "attributes": {
+            "DIMENSION_LIST": [
+              [
+                "<HDF5 object reference>"
+              ],
+              [
+                "<HDF5 object reference>"
+              ]
+            ],
+            "_FillValue": NaN,
+            "description": "Uncertainty of the ionosphere phase screen",
+            "grid_mapping": "projection",
+            "max_value": 8.19471549987793,
+            "mean_value": 4.576105117797852,
+            "min_value": 3.8417797088623047,
+            "sample_stddev": 0.6479380130767822,
+            "units": "radians"
+          },
+          "candidate": true
+        },
+        {
+          "path": "science/LSAR/GUNW/grids/frequencyA/unwrappedInterferogram/HH/projection",
+          "shape": [],
+          "dtype": "uint32",
+          "attributes": {
+            "description": "Product map grid projection: EPSG code, with additional projection information as HDF5 Attributes",
+            "ellipsoid": "WGS84",
+            "epsg_code": 32611,
+            "false_easting": 500000.0,
+            "false_northing": 0.0,
+            "grid_mapping_name": "transverse_mercator",
+            "inverse_flattening": 298.257223563,
+            "latitude_of_projection_origin": 0.0,
+            "longitude_of_central_meridian": -117.0,
+            "longitude_of_projection_origin": 0.0,
+            "scale_factor_at_central_meridian": 0.9996,
+            "semi_major_axis": 6378137.0,
+            "spatial_ref": "PROJCS[\"WGS 84 / UTM zone 11N\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0,AUTHORITY[\"EPSG\",\"8901\"]],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],PROJECTION[\"Transverse_Mercator\"],PARAMETER[\"latitude_of_origin\",0],PARAMETER[\"central_meridian\",-117],PARAMETER[\"scale_factor\",0.9996],PARAMETER[\"false_easting\",500000],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH],AUTHORITY[\"EPSG\",\"32611\"]]",
+            "utm_zone_number": 11
+          },
+          "candidate": true
+        },
+        {
+          "path": "science/LSAR/GUNW/grids/frequencyA/unwrappedInterferogram/HH/unwrappedPhase",
+          "shape": [
+            1555,
+            1136
+          ],
+          "dtype": "float32",
+          "attributes": {
+            "DIMENSION_LIST": [
+              [
+                "<HDF5 object reference>"
+              ],
+              [
+                "<HDF5 object reference>"
+              ]
+            ],
+            "_FillValue": NaN,
+            "description": "Unwrapped interferogram between HH layers",
+            "grid_mapping": "projection",
+            "max_value": 11.624897003173828,
+            "mean_value": 2.2970986366271973,
+            "min_value": -7.093188285827637,
+            "sample_stddev": 0.7250012159347534,
+            "units": "radians"
+          },
+          "candidate": true
+        },
+        {
+          "path": "science/LSAR/GUNW/grids/frequencyA/unwrappedInterferogram/HH/xCoordinateSpacing",
+          "shape": [],
+          "dtype": "float64",
+          "attributes": {
+            "description": "Nominal spacing in meters between consecutive pixels",
+            "long_name": "X coordinates spacing",
+            "units": "meters"
+          },
+          "candidate": true
+        },
+        {
+          "path": "science/LSAR/GUNW/grids/frequencyA/unwrappedInterferogram/HH/xCoordinates",
+          "shape": [
+            1136
+          ],
+          "dtype": "float64",
+          "attributes": {
+            "CLASS": "DIMENSION_SCALE",
+            "NAME": "",
+            "REFERENCE_LIST": [
+              [
+                "<HDF5 object reference>",
+                1
+              ],
+              [
+                "<HDF5 object reference>",
+                1
+              ],
+              [
+                "<HDF5 object reference>",
+                1
+              ],
+              [
+                "<HDF5 object reference>",
+                1
+              ],
+              [
+                "<HDF5 object reference>",
+                1
+              ]
+            ],
+            "description": "X coordinates in specified projection",
+            "long_name": "X coordinate of projection",
+            "standard_name": "projection_x_coordinate",
+            "units": "meters"
+          },
+          "candidate": true
+        },
+        {
+          "path": "science/LSAR/GUNW/grids/frequencyA/unwrappedInterferogram/HH/yCoordinateSpacing",
+          "shape": [],
+          "dtype": "float64",
+          "attributes": {
+            "description": "Nominal spacing in meters between consecutive lines",
+            "long_name": "Y coordinates spacing",
+            "units": "meters"
+          },
+          "candidate": true
+        },
+        {
+          "path": "science/LSAR/GUNW/grids/frequencyA/unwrappedInterferogram/HH/yCoordinates",
+          "shape": [
+            1555
+          ],
+          "dtype": "float64",
+          "attributes": {
+            "CLASS": "DIMENSION_SCALE",
+            "NAME": "",
+            "REFERENCE_LIST": [
+              [
+                "<HDF5 object reference>",
+                0
+              ],
+              [
+                "<HDF5 object reference>",
+                0
+              ],
+              [
+                "<HDF5 object reference>",
+                0
+              ],
+              [
+                "<HDF5 object reference>",
+                0
+              ],
+              [
+                "<HDF5 object reference>",
+                0
+              ]
+            ],
+            "description": "Y coordinates in specified projection",
+            "long_name": "Y coordinate of projection",
+            "standard_name": "projection_y_coordinate",
+            "units": "meters"
+          },
+          "candidate": true
+        },
+        {
+          "path": "science/LSAR/GUNW/grids/frequencyA/unwrappedInterferogram/mask",
+          "shape": [
+            1555,
+            1136
+          ],
+          "dtype": "uint8",
+          "attributes": {
+            "DIMENSION_LIST": [
+              [
+                "<HDF5 object reference>"
+              ],
+              [
+                "<HDF5 object reference>"
+              ]
+            ],
+            "_FillValue": 255,
+            "description": "Combination of water mask and a mask of subswaths of valid samples in the reference RSLC and geometrically-coregistered secondary RSLC. Each pixel value is a three-digit number: the most significant digit represents the water flag of that pixel in the reference RSLC, where 1 is water and 0 is non-water; the second digit represents the subswath number of that pixel in the reference RSLC; the least-significant digit represents the subswath number of that pixel in the secondary RSLC. A value of '0' in either subswath digit indicates an invalid sample in the corresponding RSLC",
+            "grid_mapping": "projection",
+            "percentage_water": 0.17635318071706121
+          },
+          "candidate": true
+        },
+        {
+          "path": "science/LSAR/GUNW/grids/frequencyA/unwrappedInterferogram/projection",
+          "shape": [],
+          "dtype": "uint32",
+          "attributes": {
+            "description": "Product map grid projection: EPSG code, with additional projection information as HDF5 Attributes",
+            "ellipsoid": "WGS84",
+            "epsg_code": 32611,
+            "false_easting": 500000.0,
+            "false_northing": 0.0,
+            "grid_mapping_name": "transverse_mercator",
+            "inverse_flattening": 298.257223563,
+            "latitude_of_projection_origin": 0.0,
+            "longitude_of_central_meridian": -117.0,
+            "longitude_of_projection_origin": 0.0,
+            "scale_factor_at_central_meridian": 0.9996,
+            "semi_major_axis": 6378137.0,
+            "spatial_ref": "PROJCS[\"WGS 84 / UTM zone 11N\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0,AUTHORITY[\"EPSG\",\"8901\"]],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],PROJECTION[\"Transverse_Mercator\"],PARAMETER[\"latitude_of_origin\",0],PARAMETER[\"central_meridian\",-117],PARAMETER[\"scale_factor\",0.9996],PARAMETER[\"false_easting\",500000],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH],AUTHORITY[\"EPSG\",\"32611\"]]",
+            "utm_zone_number": 11
+          },
+          "candidate": true
+        },
+        {
+          "path": "science/LSAR/GUNW/grids/frequencyA/unwrappedInterferogram/xCoordinateSpacing",
+          "shape": [],
+          "dtype": "float64",
+          "attributes": {
+            "description": "Nominal spacing in meters between consecutive pixels",
+            "long_name": "X coordinates spacing",
+            "units": "meters"
+          },
+          "candidate": true
+        },
+        {
+          "path": "science/LSAR/GUNW/grids/frequencyA/unwrappedInterferogram/xCoordinates",
+          "shape": [
+            1136
+          ],
+          "dtype": "float64",
+          "attributes": {
+            "CLASS": "DIMENSION_SCALE",
+            "NAME": "",
+            "REFERENCE_LIST": [
+              [
+                "<HDF5 object reference>",
+                1
+              ]
+            ],
+            "description": "X coordinates in specified projection",
+            "long_name": "X coordinate of projection",
+            "standard_name": "projection_x_coordinate",
+            "units": "meters"
+          },
+          "candidate": true
+        },
+        {
+          "path": "science/LSAR/GUNW/grids/frequencyA/unwrappedInterferogram/yCoordinateSpacing",
+          "shape": [],
+          "dtype": "float64",
+          "attributes": {
+            "description": "Nominal spacing in meters between consecutive lines",
+            "long_name": "Y coordinates spacing",
+            "units": "meters"
+          },
+          "candidate": true
+        },
+        {
+          "path": "science/LSAR/GUNW/grids/frequencyA/unwrappedInterferogram/yCoordinates",
+          "shape": [
+            1555
+          ],
+          "dtype": "float64",
+          "attributes": {
+            "CLASS": "DIMENSION_SCALE",
+            "NAME": "",
+            "REFERENCE_LIST": [
+              [
+                "<HDF5 object reference>",
+                0
+              ]
+            ],
+            "description": "Y coordinates in specified projection",
+            "long_name": "Y coordinate of projection",
+            "standard_name": "projection_y_coordinate",
+            "units": "meters"
+          },
+          "candidate": true
+        },
+        {
+          "path": "science/LSAR/GUNW/grids/frequencyA/wrappedInterferogram/HH/coherenceMagnitude",
+          "shape": [
+            6220,
+            4545
+          ],
+          "dtype": "float32",
+          "attributes": {
+            "DIMENSION_LIST": [
+              [
+                "<HDF5 object reference>"
+              ],
+              [
+                "<HDF5 object reference>"
+              ]
+            ],
+            "_FillValue": NaN,
+            "description": "Coherence magnitude between HH layers",
+            "grid_mapping": "projection",
+            "max_value": 0.995500922203064,
+            "mean_value": 0.437061607837677,
+            "min_value": 0.0023680294398218393,
+            "sample_stddev": 0.14452706277370453,
+            "units": "1"
+          },
+          "candidate": true
+        },
+        {
+          "path": "science/LSAR/GUNW/grids/frequencyA/wrappedInterferogram/HH/projection",
+          "shape": [],
+          "dtype": "uint32",
+          "attributes": {
+            "description": "Product map grid projection: EPSG code, with additional projection information as HDF5 Attributes",
+            "ellipsoid": "WGS84",
+            "epsg_code": 32611,
+            "false_easting": 500000.0,
+            "false_northing": 0.0,
+            "grid_mapping_name": "transverse_mercator",
+            "inverse_flattening": 298.257223563,
+            "latitude_of_projection_origin": 0.0,
+            "longitude_of_central_meridian": -117.0,
+            "longitude_of_projection_origin": 0.0,
+            "scale_factor_at_central_meridian": 0.9996,
+            "semi_major_axis": 6378137.0,
+            "spatial_ref": "PROJCS[\"WGS 84 / UTM zone 11N\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0,AUTHORITY[\"EPSG\",\"8901\"]],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],PROJECTION[\"Transverse_Mercator\"],PARAMETER[\"latitude_of_origin\",0],PARAMETER[\"central_meridian\",-117],PARAMETER[\"scale_factor\",0.9996],PARAMETER[\"false_easting\",500000],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH],AUTHORITY[\"EPSG\",\"32611\"]]",
+            "utm_zone_number": 11
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/grids/frequencyA/wrappedInterferogram/HH/wrappedInterferogram",
+          "shape": [
+            6220,
+            4545
+          ],
+          "dtype": "complex64",
+          "attributes": {
+            "DIMENSION_LIST": [
+              [
+                "<HDF5 object reference>"
+              ],
+              [
+                "<HDF5 object reference>"
+              ]
+            ],
+            "_FillValue": "(nan+nanj)",
+            "description": "Complex wrapped interferogram between HH layers",
+            "grid_mapping": "projection",
+            "units": "1"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/grids/frequencyA/wrappedInterferogram/HH/xCoordinateSpacing",
+          "shape": [],
+          "dtype": "float64",
+          "attributes": {
+            "description": "Nominal spacing in meters between consecutive pixels",
+            "long_name": "X coordinates spacing",
+            "units": "meters"
+          },
+          "candidate": true
+        },
+        {
+          "path": "science/LSAR/GUNW/grids/frequencyA/wrappedInterferogram/HH/xCoordinates",
+          "shape": [
+            4545
+          ],
+          "dtype": "float64",
+          "attributes": {
+            "CLASS": "DIMENSION_SCALE",
+            "NAME": "",
+            "REFERENCE_LIST": [
+              [
+                "<HDF5 object reference>",
+                1
+              ],
+              [
+                "<HDF5 object reference>",
+                1
+              ]
+            ],
+            "description": "X coordinates in specified projection",
+            "long_name": "X coordinate of projection",
+            "standard_name": "projection_x_coordinate",
+            "units": "meters"
+          },
+          "candidate": true
+        },
+        {
+          "path": "science/LSAR/GUNW/grids/frequencyA/wrappedInterferogram/HH/yCoordinateSpacing",
+          "shape": [],
+          "dtype": "float64",
+          "attributes": {
+            "description": "Nominal spacing in meters between consecutive lines",
+            "long_name": "Y coordinates spacing",
+            "units": "meters"
+          },
+          "candidate": true
+        },
+        {
+          "path": "science/LSAR/GUNW/grids/frequencyA/wrappedInterferogram/HH/yCoordinates",
+          "shape": [
+            6220
+          ],
+          "dtype": "float64",
+          "attributes": {
+            "CLASS": "DIMENSION_SCALE",
+            "NAME": "",
+            "REFERENCE_LIST": [
+              [
+                "<HDF5 object reference>",
+                0
+              ],
+              [
+                "<HDF5 object reference>",
+                0
+              ]
+            ],
+            "description": "Y coordinates in specified projection",
+            "long_name": "Y coordinate of projection",
+            "standard_name": "projection_y_coordinate",
+            "units": "meters"
+          },
+          "candidate": true
+        },
+        {
+          "path": "science/LSAR/GUNW/grids/frequencyA/wrappedInterferogram/mask",
+          "shape": [
+            6220,
+            4545
+          ],
+          "dtype": "uint8",
+          "attributes": {
+            "DIMENSION_LIST": [
+              [
+                "<HDF5 object reference>"
+              ],
+              [
+                "<HDF5 object reference>"
+              ]
+            ],
+            "_FillValue": 255,
+            "description": "Combination of water mask and a mask of subswaths of valid samples in the reference RSLC and geometrically-coregistered secondary RSLC. Each pixel value is a three-digit number: the most significant digit represents the water flag of that pixel in the reference RSLC, where 1 is water and 0 is non-water; the second digit represents the subswath number of that pixel in the reference RSLC; the least-significant digit represents the subswath number of that pixel in the secondary RSLC. A value of '0' in either subswath digit indicates an invalid sample in the corresponding RSLC",
+            "grid_mapping": "projection",
+            "percentage_water": 0.23703952777636095
+          },
+          "candidate": true
+        },
+        {
+          "path": "science/LSAR/GUNW/grids/frequencyA/wrappedInterferogram/projection",
+          "shape": [],
+          "dtype": "uint32",
+          "attributes": {
+            "description": "Product map grid projection: EPSG code, with additional projection information as HDF5 Attributes",
+            "ellipsoid": "WGS84",
+            "epsg_code": 32611,
+            "false_easting": 500000.0,
+            "false_northing": 0.0,
+            "grid_mapping_name": "transverse_mercator",
+            "inverse_flattening": 298.257223563,
+            "latitude_of_projection_origin": 0.0,
+            "longitude_of_central_meridian": -117.0,
+            "longitude_of_projection_origin": 0.0,
+            "scale_factor_at_central_meridian": 0.9996,
+            "semi_major_axis": 6378137.0,
+            "spatial_ref": "PROJCS[\"WGS 84 / UTM zone 11N\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0,AUTHORITY[\"EPSG\",\"8901\"]],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],PROJECTION[\"Transverse_Mercator\"],PARAMETER[\"latitude_of_origin\",0],PARAMETER[\"central_meridian\",-117],PARAMETER[\"scale_factor\",0.9996],PARAMETER[\"false_easting\",500000],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH],AUTHORITY[\"EPSG\",\"32611\"]]",
+            "utm_zone_number": 11
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/grids/frequencyA/wrappedInterferogram/xCoordinateSpacing",
+          "shape": [],
+          "dtype": "float64",
+          "attributes": {
+            "description": "Nominal spacing in meters between consecutive pixels",
+            "long_name": "X coordinates spacing",
+            "units": "meters"
+          },
+          "candidate": true
+        },
+        {
+          "path": "science/LSAR/GUNW/grids/frequencyA/wrappedInterferogram/xCoordinates",
+          "shape": [
+            4545
+          ],
+          "dtype": "float64",
+          "attributes": {
+            "CLASS": "DIMENSION_SCALE",
+            "NAME": "",
+            "REFERENCE_LIST": [
+              [
+                "<HDF5 object reference>",
+                1
+              ]
+            ],
+            "description": "X coordinates in specified projection",
+            "long_name": "X coordinate of projection",
+            "standard_name": "projection_x_coordinate",
+            "units": "meters"
+          },
+          "candidate": true
+        },
+        {
+          "path": "science/LSAR/GUNW/grids/frequencyA/wrappedInterferogram/yCoordinateSpacing",
+          "shape": [],
+          "dtype": "float64",
+          "attributes": {
+            "description": "Nominal spacing in meters between consecutive lines",
+            "long_name": "Y coordinates spacing",
+            "units": "meters"
+          },
+          "candidate": true
+        },
+        {
+          "path": "science/LSAR/GUNW/grids/frequencyA/wrappedInterferogram/yCoordinates",
+          "shape": [
+            6220
+          ],
+          "dtype": "float64",
+          "attributes": {
+            "CLASS": "DIMENSION_SCALE",
+            "NAME": "",
+            "REFERENCE_LIST": [
+              [
+                "<HDF5 object reference>",
+                0
+              ]
+            ],
+            "description": "Y coordinates in specified projection",
+            "long_name": "Y coordinate of projection",
+            "standard_name": "projection_y_coordinate",
+            "units": "meters"
+          },
+          "candidate": true
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/attitude/reference/attitudeType",
+          "shape": [],
+          "dtype": "|S10",
+          "attributes": {
+            "description": "Attitude type, either \"FRP\", \"NRP\", \"PRP, or \"Custom\", where \"FRP\" stands for Forecast Radar Pointing, \"NRP\" is Near Real-time Pointing, and \"PRP\" is Precise Radar Pointing"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/attitude/reference/eulerAngles",
+          "shape": [
+            22,
+            3
+          ],
+          "dtype": "float64",
+          "attributes": {
+            "description": "Attitude Euler angles (roll, pitch, yaw)",
+            "units": "degrees"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/attitude/reference/quaternions",
+          "shape": [
+            22,
+            4
+          ],
+          "dtype": "float64",
+          "attributes": {
+            "description": "Attitude quaternions (q0, q1, q2, q3)",
+            "units": "1"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/attitude/reference/time",
+          "shape": [
+            22
+          ],
+          "dtype": "float64",
+          "attributes": {
+            "description": "Time vector record. This record contains the time since UTC epoch corresponding to attitude and quaternion records",
+            "units": "seconds since 2008-10-12T00:00:00"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/attitude/secondary/attitudeType",
+          "shape": [],
+          "dtype": "|S10",
+          "attributes": {
+            "description": "Attitude type, either \"FRP\", \"NRP\", \"PRP, or \"Custom\", where \"FRP\" stands for Forecast Radar Pointing, \"NRP\" is Near Real-time Pointing, and \"PRP\" is Precise Radar Pointing"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/attitude/secondary/eulerAngles",
+          "shape": [
+            22,
+            3
+          ],
+          "dtype": "float64",
+          "attributes": {
+            "description": "Attitude Euler angles (roll, pitch, yaw)",
+            "units": "degrees"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/attitude/secondary/quaternions",
+          "shape": [
+            22,
+            4
+          ],
+          "dtype": "float64",
+          "attributes": {
+            "description": "Attitude quaternions (q0, q1, q2, q3)",
+            "units": "1"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/attitude/secondary/time",
+          "shape": [
+            22
+          ],
+          "dtype": "float64",
+          "attributes": {
+            "description": "Time vector record. This record contains the time since UTC epoch corresponding to attitude and quaternion records",
+            "units": "seconds since 2008-11-27T00:00:00"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/orbit/reference/interpMethod",
+          "shape": [],
+          "dtype": "|S7",
+          "attributes": {
+            "description": "Orbit interpolation method, either \"Hermite\" or \"Legendre\""
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/orbit/reference/orbitType",
+          "shape": [],
+          "dtype": "|S3",
+          "attributes": {
+            "description": "Orbit product type, either \"FOE\", \"NOE\", \"MOE\", \"POE\", or \"Custom\", where \"FOE\" stands for Forecast Orbit Ephemeris, \"NOE\" is Near real-time Orbit Ephemeris, \"MOE\" is Medium precision Orbit Ephemeris, and \"POE\" is Precise Orbit Ephemeris"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/orbit/reference/position",
+          "shape": [
+            8,
+            3
+          ],
+          "dtype": "float64",
+          "attributes": {
+            "description": "Position vector record. This record contains the platform position data with respect to WGS84 G1762 reference frame",
+            "units": "meters"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/orbit/reference/time",
+          "shape": [
+            8
+          ],
+          "dtype": "float64",
+          "attributes": {
+            "description": "Time vector record. This record contains the time since UTC epoch corresponding to position and velocity records",
+            "units": "seconds since 2008-10-12T00:00:00"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/orbit/reference/velocity",
+          "shape": [
+            8,
+            3
+          ],
+          "dtype": "float64",
+          "attributes": {
+            "description": "Velocity vector record. This record contains the platform velocity data with respect to WGS84 G1762 reference frame",
+            "units": "meters / second"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/orbit/secondary/interpMethod",
+          "shape": [],
+          "dtype": "|S7",
+          "attributes": {
+            "description": "Orbit interpolation method, either \"Hermite\" or \"Legendre\""
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/orbit/secondary/orbitType",
+          "shape": [],
+          "dtype": "|S3",
+          "attributes": {
+            "description": "Orbit product type, either \"FOE\", \"NOE\", \"MOE\", \"POE\", or \"Custom\", where \"FOE\" stands for Forecast Orbit Ephemeris, \"NOE\" is Near real-time Orbit Ephemeris, \"MOE\" is Medium precision Orbit Ephemeris, and \"POE\" is Precise Orbit Ephemeris"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/orbit/secondary/position",
+          "shape": [
+            9,
+            3
+          ],
+          "dtype": "float64",
+          "attributes": {
+            "description": "Position vector record. This record contains the platform position data with respect to WGS84 G1762 reference frame",
+            "units": "meters"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/orbit/secondary/time",
+          "shape": [
+            9
+          ],
+          "dtype": "float64",
+          "attributes": {
+            "description": "Time vector record. This record contains the time since UTC epoch corresponding to position and velocity records",
+            "units": "seconds since 2008-11-27T00:00:00"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/orbit/secondary/velocity",
+          "shape": [
+            9,
+            3
+          ],
+          "dtype": "float64",
+          "attributes": {
+            "description": "Velocity vector record. This record contains the platform velocity data with respect to WGS84 G1762 reference frame",
+            "units": "meters / second"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/orbit/temporalBaseline",
+          "shape": [],
+          "dtype": "uint16",
+          "attributes": {
+            "description": "Time interval between reference and secondary RSLCs",
+            "units": "days"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/algorithms/coregistration/coregistrationMethod",
+          "shape": [],
+          "dtype": "|S93",
+          "attributes": {
+            "description": "RSLC coregistration method"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/algorithms/coregistration/crossCorrelation",
+          "shape": [],
+          "dtype": "|S9",
+          "attributes": {
+            "description": "Cross-correlation algorithm for sub-pixel offsets computation"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/algorithms/coregistration/crossCorrelationFilling",
+          "shape": [],
+          "dtype": "|S13",
+          "attributes": {
+            "description": "Outliers data filling algorithm for cross-correlation offsets"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/algorithms/coregistration/crossCorrelationFilterKernel",
+          "shape": [],
+          "dtype": "|S6",
+          "attributes": {
+            "description": "Filtering algorithm for cross-correlation offsets"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/algorithms/coregistration/crossCorrelationOutliers",
+          "shape": [],
+          "dtype": "|S13",
+          "attributes": {
+            "description": "Outliers identification algorithm"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/algorithms/coregistration/geometryCoregistration",
+          "shape": [],
+          "dtype": "|S54",
+          "attributes": {
+            "description": "Geometry coregistration algorithm"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/algorithms/coregistration/resampling",
+          "shape": [],
+          "dtype": "|S4",
+          "attributes": {
+            "description": "Secondary RSLC resampling algorithm"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/algorithms/geocoding/complexGeocodingInterpolation",
+          "shape": [],
+          "dtype": "|S4",
+          "attributes": {
+            "description": "Geocoding interpolation algorithm for complex-valued datasets"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/algorithms/geocoding/demInterpolation",
+          "shape": [],
+          "dtype": "|S9",
+          "attributes": {
+            "description": "DEM interpolation algorithm"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/algorithms/geocoding/floatingGeocodingInterpolation",
+          "shape": [],
+          "dtype": "|S8",
+          "attributes": {
+            "description": "Geocoding interpolation algorithm for floating point datasets"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/algorithms/geocoding/integerGeocodingInterpolation",
+          "shape": [],
+          "dtype": "|S7",
+          "attributes": {
+            "description": "Geocoding interpolation algorithm for integer datasets"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/algorithms/interferogramFormation/flatteningMethod",
+          "shape": [],
+          "dtype": "|S21",
+          "attributes": {
+            "description": "Algorithm used to flatten the wrapped interferogram"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/algorithms/interferogramFormation/multilooking",
+          "shape": [],
+          "dtype": "|S38",
+          "attributes": {
+            "description": "Multilooking algorithm"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/algorithms/interferogramFormation/wrappedInterferogramFiltering",
+          "shape": [],
+          "dtype": "|S9",
+          "attributes": {
+            "description": "Algorithm used to filter the wrapped interferogram prior to phase unwrapping"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/algorithms/ionosphereEstimation/ionosphereAlgorithm",
+          "shape": [],
+          "dtype": "|S111",
+          "attributes": {
+            "description": "Algorithm used to estimate ionosphere phase screen"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/algorithms/ionosphereEstimation/ionosphereFilling",
+          "shape": [],
+          "dtype": "|S7",
+          "attributes": {
+            "description": "Outliers data filling algorithm for ionosphere phase estimation"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/algorithms/ionosphereEstimation/ionosphereFiltering",
+          "shape": [],
+          "dtype": "|S42",
+          "attributes": {
+            "description": "Filtering algorithm for ionosphere phase screen computation"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/algorithms/ionosphereEstimation/ionosphereOutliers",
+          "shape": [],
+          "dtype": "|S9",
+          "attributes": {
+            "description": "Algorithm identifying outliers in unfiltered ionosphere phase screen"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/algorithms/ionosphereEstimation/unwrappingErrorCorrection",
+          "shape": [],
+          "dtype": "|S1",
+          "attributes": {
+            "description": "Algorithm correcting unwrapping errors in sub-band unwrapped interferograms"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/algorithms/softwareVersion",
+          "shape": [],
+          "dtype": "|S6",
+          "attributes": {
+            "description": "Software version used for processing"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/algorithms/unwrapping/costMode",
+          "shape": [],
+          "dtype": "|S6",
+          "attributes": {
+            "description": "Cost mode algorithm for phase unwrapping"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/algorithms/unwrapping/preprocessing/wrappedPhaseFilling",
+          "shape": [],
+          "dtype": "|S4",
+          "attributes": {
+            "description": "Outliers data filling algorithm for phase unwrapping preprocessing"
+          },
+          "candidate": true
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/algorithms/unwrapping/preprocessing/wrappedPhaseOutliers",
+          "shape": [],
+          "dtype": "|S4",
+          "attributes": {
+            "description": "Algorithm identifying outliers in the wrapped interferogram"
+          },
+          "candidate": true
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/algorithms/unwrapping/unwrappingAlgorithm",
+          "shape": [],
+          "dtype": "|S6",
+          "attributes": {
+            "description": "Algorithm used for phase unwrapping"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/algorithms/unwrapping/unwrappingInitializer",
+          "shape": [],
+          "dtype": "|S3",
+          "attributes": {
+            "description": "Algorithm used to initialize phase unwrapping"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/inputs/configFiles",
+          "shape": [],
+          "dtype": "|S4",
+          "attributes": {
+            "description": "List of input config files used"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/inputs/demSource",
+          "shape": [],
+          "dtype": "|S167",
+          "attributes": {
+            "description": "Description of the input digital elevation model (DEM)"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/inputs/l1ReferenceSlcGranules",
+          "shape": [
+            1
+          ],
+          "dtype": "|S94",
+          "attributes": {
+            "description": "List of input reference L1 RSLC products used"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/inputs/l1SecondarySlcGranules",
+          "shape": [
+            1
+          ],
+          "dtype": "|S94",
+          "attributes": {
+            "description": "List of input secondary L1 RSLC products used"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/inputs/orbitFiles",
+          "shape": [
+            1,
+            2
+          ],
+          "dtype": "|S39",
+          "attributes": {
+            "description": "List of input orbit files used"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/parameters/common/frequencyA/dopplerBandwidth",
+          "shape": [],
+          "dtype": "float64",
+          "attributes": {
+            "description": "Common Doppler bandwidth between reference and secondary RSLCs",
+            "units": "hertz"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/parameters/common/frequencyA/dopplerCentroid",
+          "shape": [
+            17,
+            17
+          ],
+          "dtype": "float64",
+          "attributes": {
+            "description": "2D LUT of common Doppler centroid between reference and secondary RSLCs",
+            "units": "hertz"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/parameters/geocoding/azimuthIonosphericCorrectionApplied",
+          "shape": [],
+          "dtype": "|S4",
+          "attributes": {
+            "description": "Flag to indicate if the azimuth ionospheric correction is applied to improve geolocation"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/parameters/geocoding/hydrostaticTroposphericCorrectionApplied",
+          "shape": [],
+          "dtype": "|S4",
+          "attributes": {
+            "description": "Flag to indicate if the hydrostatic tropospheric correction is applied to improve geolocation"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/parameters/geocoding/rangeIonosphericCorrectionApplied",
+          "shape": [],
+          "dtype": "|S4",
+          "attributes": {
+            "description": "Flag to indicate if the range ionospheric correction is applied to improve geolocation"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/parameters/geocoding/wetTroposphericCorrectionApplied",
+          "shape": [],
+          "dtype": "|S4",
+          "attributes": {
+            "description": "Flag to indicate if the wet tropospheric correction is applied to improve geolocation"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/parameters/ionosphere/highBandBandwidth",
+          "shape": [],
+          "dtype": "float32",
+          "attributes": {
+            "description": "Slant range bandwidth of the high sub-band image",
+            "units": "hertz"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/parameters/ionosphere/lowBandBandwidth",
+          "shape": [],
+          "dtype": "float32",
+          "attributes": {
+            "description": "Slant range bandwidth of the low sub-band image",
+            "units": "hertz"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/parameters/pixelOffsets/frequencyA/alongTrackSearchWindowSize",
+          "shape": [],
+          "dtype": "uint32",
+          "attributes": {
+            "description": "Along-track cross-correlation search window size in pixels",
+            "units": "1"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/parameters/pixelOffsets/frequencyA/alongTrackSkipWindowSize",
+          "shape": [],
+          "dtype": "uint32",
+          "attributes": {
+            "description": "Along-track cross-correlation skip window size in pixels",
+            "units": "1"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/parameters/pixelOffsets/frequencyA/alongTrackWindowSize",
+          "shape": [],
+          "dtype": "uint32",
+          "attributes": {
+            "description": "Along-track cross-correlation window size in pixels",
+            "units": "1"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/parameters/pixelOffsets/frequencyA/correlationSurfaceOversampling",
+          "shape": [],
+          "dtype": "uint32",
+          "attributes": {
+            "description": "Oversampling factor of the cross-correlation surface",
+            "units": "1"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/parameters/pixelOffsets/frequencyA/isOffsetsBlendingApplied",
+          "shape": [],
+          "dtype": "|S5",
+          "attributes": {
+            "description": "Flag to indicate if pixel offsets are the results of blending multi-resolution layers of pixel offsets"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/parameters/pixelOffsets/frequencyA/slantRangeSearchWindowSize",
+          "shape": [],
+          "dtype": "uint32",
+          "attributes": {
+            "description": "Slant range cross-correlation search window size in pixels",
+            "units": "1"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/parameters/pixelOffsets/frequencyA/slantRangeSkipWindowSize",
+          "shape": [],
+          "dtype": "uint32",
+          "attributes": {
+            "description": "Slant range cross-correlation skip window size in pixels",
+            "units": "1"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/parameters/pixelOffsets/frequencyA/slantRangeWindowSize",
+          "shape": [],
+          "dtype": "uint32",
+          "attributes": {
+            "description": "Slant range cross-correlation window size in pixels",
+            "units": "1"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/parameters/reference/frequencyA/azimuthBandwidth",
+          "shape": [],
+          "dtype": "float64",
+          "attributes": {
+            "description": "Processed azimuth bandwidth for reference RSLC",
+            "units": "hertz"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/parameters/reference/frequencyA/dopplerCentroid",
+          "shape": [
+            17,
+            17
+          ],
+          "dtype": "float64",
+          "attributes": {
+            "description": "2D LUT of Doppler centroid for frequency A",
+            "units": "hertz"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/parameters/reference/frequencyA/numberOfAzimuthLines",
+          "shape": [],
+          "dtype": "uint64",
+          "attributes": {
+            "description": "Number of azimuth lines within the reference RSLC",
+            "units": "1"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/parameters/reference/frequencyA/numberOfRangeSamples",
+          "shape": [],
+          "dtype": "uint64",
+          "attributes": {
+            "description": "Number of slant range samples for each azimuth line within the reference RSLC",
+            "units": "1"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/parameters/reference/frequencyA/rangeBandwidth",
+          "shape": [],
+          "dtype": "float64",
+          "attributes": {
+            "description": "Processed slant range bandwidth for reference RSLC",
+            "units": "hertz"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/parameters/reference/frequencyA/slantRangeSpacing",
+          "shape": [],
+          "dtype": "float64",
+          "attributes": {
+            "description": "Slant range spacing of reference RSLC",
+            "units": "meters"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/parameters/reference/frequencyA/slantRangeStart",
+          "shape": [],
+          "dtype": "float64",
+          "attributes": {
+            "description": "Slant range start distance for the reference RSLC",
+            "units": "meters"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/parameters/reference/frequencyA/zeroDopplerEndTime",
+          "shape": [],
+          "dtype": "|S29",
+          "attributes": {
+            "description": "Azimuth stop time (in UTC) of the reference RSLC product in the format YYYY-mm-ddTHH:MM:SS.sssssssss"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/parameters/reference/frequencyA/zeroDopplerStartTime",
+          "shape": [],
+          "dtype": "|S29",
+          "attributes": {
+            "description": "Azimuth start time (in UTC) of the reference RSLC product in the format YYYY-mm-ddTHH:MM:SS.sssssssss"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/parameters/reference/frequencyA/zeroDopplerTimeSpacing",
+          "shape": [],
+          "dtype": "float64",
+          "attributes": {
+            "description": "Time interval in the along-track direction for reference RSLC raster layers",
+            "units": "seconds"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/parameters/reference/isMixedMode",
+          "shape": [],
+          "dtype": "|S5",
+          "attributes": {
+            "description": "\"True\" if reference RSLC is a composite of data collected in multiple radar modes, \"False\" otherwise"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/parameters/reference/referenceTerrainHeight",
+          "shape": [
+            17
+          ],
+          "dtype": "float32",
+          "attributes": {
+            "description": "Reference Terrain Height as a function of map coordinates for reference RSLC",
+            "units": "meters"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/parameters/reference/rfiMitigationApplied",
+          "shape": [],
+          "dtype": "|S4",
+          "attributes": {
+            "description": "Flag to indicate if RFI mitigation has been applied to reference RSLC"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/parameters/runConfigurationContents",
+          "shape": [],
+          "dtype": "|S17600",
+          "attributes": {
+            "description": "Contents of the run configuration file with parameters used for processing"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/parameters/secondary/frequencyA/azimuthBandwidth",
+          "shape": [],
+          "dtype": "float64",
+          "attributes": {
+            "description": "Processed azimuth bandwidth for secondary RSLC",
+            "units": "hertz"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/parameters/secondary/frequencyA/dopplerCentroid",
+          "shape": [
+            17,
+            17
+          ],
+          "dtype": "float64",
+          "attributes": {
+            "description": "2D LUT of Doppler centroid for frequency A",
+            "units": "hertz"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/parameters/secondary/frequencyA/numberOfAzimuthLines",
+          "shape": [],
+          "dtype": "uint64",
+          "attributes": {
+            "description": "Number of azimuth lines within the secondary RSLC",
+            "units": "1"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/parameters/secondary/frequencyA/numberOfRangeSamples",
+          "shape": [],
+          "dtype": "uint64",
+          "attributes": {
+            "description": "Number of slant range samples for each azimuth line within the secondary RSLC",
+            "units": "1"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/parameters/secondary/frequencyA/rangeBandwidth",
+          "shape": [],
+          "dtype": "float64",
+          "attributes": {
+            "description": "Processed slant range bandwidth for secondary RSLC",
+            "units": "hertz"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/parameters/secondary/frequencyA/slantRangeSpacing",
+          "shape": [],
+          "dtype": "float64",
+          "attributes": {
+            "description": "Slant range spacing of secondary RSLC",
+            "units": "meters"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/parameters/secondary/frequencyA/slantRangeStart",
+          "shape": [],
+          "dtype": "float64",
+          "attributes": {
+            "description": "Slant range start distance for the secondary RSLC",
+            "units": "meters"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/parameters/secondary/frequencyA/zeroDopplerEndTime",
+          "shape": [],
+          "dtype": "|S29",
+          "attributes": {
+            "description": "Azimuth stop time (in UTC) of the secondary RSLC product in the format YYYY-mm-ddTHH:MM:SS.sssssssss"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/parameters/secondary/frequencyA/zeroDopplerStartTime",
+          "shape": [],
+          "dtype": "|S29",
+          "attributes": {
+            "description": "Azimuth start time (in UTC) of the secondary RSLC product in the format YYYY-mm-ddTHH:MM:SS.sssssssss"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/parameters/secondary/frequencyA/zeroDopplerTimeSpacing",
+          "shape": [],
+          "dtype": "float64",
+          "attributes": {
+            "description": "Time interval in the along-track direction for secondary RSLC raster layers",
+            "units": "seconds"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/parameters/secondary/isMixedMode",
+          "shape": [],
+          "dtype": "|S5",
+          "attributes": {
+            "description": "\"True\" if secondary RSLC is a composite of data collected in multiple radar modes, \"False\" otherwise"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/parameters/secondary/referenceTerrainHeight",
+          "shape": [
+            17
+          ],
+          "dtype": "float32",
+          "attributes": {
+            "description": "Reference Terrain Height as a function of map coordinates for secondary RSLC",
+            "units": "meters"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/parameters/secondary/rfiMitigationApplied",
+          "shape": [],
+          "dtype": "|S4",
+          "attributes": {
+            "description": "Flag to indicate if RFI mitigation has been applied to secondary RSLC"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/parameters/unwrappedInterferogram/frequencyA/azimuthBandwidth",
+          "shape": [],
+          "dtype": "float64",
+          "attributes": {
+            "description": "Processed azimuth bandwidth for frequency A interferometric layers",
+            "units": "hertz"
+          },
+          "candidate": true
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/parameters/unwrappedInterferogram/frequencyA/commonBandAzimuthFilterApplied",
+          "shape": [],
+          "dtype": "|S5",
+          "attributes": {
+            "description": "Flag to indicate if common band azimuth filter has been applied"
+          },
+          "candidate": true
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/parameters/unwrappedInterferogram/frequencyA/commonBandRangeFilterApplied",
+          "shape": [],
+          "dtype": "|S5",
+          "attributes": {
+            "description": "Flag to indicate if common band range filter has been applied"
+          },
+          "candidate": true
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/parameters/unwrappedInterferogram/frequencyA/ellipsoidalFlatteningApplied",
+          "shape": [],
+          "dtype": "|S4",
+          "attributes": {
+            "description": "Flag to indicate if the interferometric phase has been flattened with respect to a zero height ellipsoid"
+          },
+          "candidate": true
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/parameters/unwrappedInterferogram/frequencyA/numberOfAzimuthLooks",
+          "shape": [],
+          "dtype": "uint32",
+          "attributes": {
+            "description": "Number of looks applied in the along-track direction to form the unwrapped interferogram",
+            "units": "1"
+          },
+          "candidate": true
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/parameters/unwrappedInterferogram/frequencyA/numberOfRangeLooks",
+          "shape": [],
+          "dtype": "uint32",
+          "attributes": {
+            "description": "Number of looks applied in the slant range direction to form the unwrapped interferogram",
+            "units": "1"
+          },
+          "candidate": true
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/parameters/unwrappedInterferogram/frequencyA/rangeBandwidth",
+          "shape": [],
+          "dtype": "float64",
+          "attributes": {
+            "description": "Processed slant range bandwidth for frequency A interferometric layers",
+            "units": "hertz"
+          },
+          "candidate": true
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/parameters/unwrappedInterferogram/frequencyA/topographicFlatteningApplied",
+          "shape": [],
+          "dtype": "|S4",
+          "attributes": {
+            "description": "Flag to indicate if the interferometric phase has been flattened with respect to topographic height using a DEM"
+          },
+          "candidate": true
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/parameters/wrappedInterferogram/frequencyA/azimuthBandwidth",
+          "shape": [],
+          "dtype": "float64",
+          "attributes": {
+            "description": "Processed azimuth bandwidth for frequency A interferometric layers",
+            "units": "hertz"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/parameters/wrappedInterferogram/frequencyA/commonBandAzimuthFilterApplied",
+          "shape": [],
+          "dtype": "|S5",
+          "attributes": {
+            "description": "Flag to indicate if common band azimuth filter has been applied"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/parameters/wrappedInterferogram/frequencyA/commonBandRangeFilterApplied",
+          "shape": [],
+          "dtype": "|S5",
+          "attributes": {
+            "description": "Flag to indicate if common band range filter has been applied"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/parameters/wrappedInterferogram/frequencyA/ellipsoidalFlatteningApplied",
+          "shape": [],
+          "dtype": "|S4",
+          "attributes": {
+            "description": "Flag to indicate if the interferometric phase has been flattened with respect to a zero height ellipsoid"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/parameters/wrappedInterferogram/frequencyA/numberOfAzimuthLooks",
+          "shape": [],
+          "dtype": "uint32",
+          "attributes": {
+            "description": "Number of looks applied in the along-track direction to form the wrapped interferogram",
+            "units": "1"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/parameters/wrappedInterferogram/frequencyA/numberOfRangeLooks",
+          "shape": [],
+          "dtype": "uint32",
+          "attributes": {
+            "description": "Number of looks applied in the slant range direction to form the wrapped interferogram",
+            "units": "1"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/parameters/wrappedInterferogram/frequencyA/rangeBandwidth",
+          "shape": [],
+          "dtype": "float64",
+          "attributes": {
+            "description": "Processed slant range bandwidth for frequency A interferometric layers",
+            "units": "hertz"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/processingInformation/parameters/wrappedInterferogram/frequencyA/topographicFlatteningApplied",
+          "shape": [],
+          "dtype": "|S4",
+          "attributes": {
+            "description": "Flag to indicate if the interferometric phase has been flattened with respect to topographic height using a DEM"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/radarGrid/alongTrackUnitVectorX",
+          "shape": [
+            20,
+            261,
+            194
+          ],
+          "dtype": "float32",
+          "attributes": {
+            "DIMENSION_LIST": [
+              [
+                "<HDF5 object reference>"
+              ],
+              [
+                "<HDF5 object reference>"
+              ],
+              [
+                "<HDF5 object reference>"
+              ]
+            ],
+            "_FillValue": NaN,
+            "description": "East component of unit vector along ground track",
+            "grid_mapping": "projection",
+            "long_name": "Along-track unit vector X",
+            "units": "1",
+            "valid_max": 1.0,
+            "valid_min": -1.0
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/radarGrid/alongTrackUnitVectorY",
+          "shape": [
+            20,
+            261,
+            194
+          ],
+          "dtype": "float32",
+          "attributes": {
+            "DIMENSION_LIST": [
+              [
+                "<HDF5 object reference>"
+              ],
+              [
+                "<HDF5 object reference>"
+              ],
+              [
+                "<HDF5 object reference>"
+              ]
+            ],
+            "_FillValue": NaN,
+            "description": "North component of unit vector along ground track",
+            "grid_mapping": "projection",
+            "long_name": "Along-track unit vector Y",
+            "units": "1",
+            "valid_max": 1.0,
+            "valid_min": -1.0
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/radarGrid/elevationAngle",
+          "shape": [
+            20,
+            261,
+            194
+          ],
+          "dtype": "float32",
+          "attributes": {
+            "DIMENSION_LIST": [
+              [
+                "<HDF5 object reference>"
+              ],
+              [
+                "<HDF5 object reference>"
+              ],
+              [
+                "<HDF5 object reference>"
+              ]
+            ],
+            "_FillValue": NaN,
+            "description": "Elevation angle is defined as the angle between the LOS vector and the normal to the ellipsoid at the sensor",
+            "grid_mapping": "projection",
+            "long_name": "Elevation angle",
+            "units": "degrees",
+            "valid_max": 90.0,
+            "valid_min": 0.0
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/radarGrid/groundTrackVelocity",
+          "shape": [
+            20,
+            261,
+            194
+          ],
+          "dtype": "float64",
+          "attributes": {
+            "DIMENSION_LIST": [
+              [
+                "<HDF5 object reference>"
+              ],
+              [
+                "<HDF5 object reference>"
+              ],
+              [
+                "<HDF5 object reference>"
+              ]
+            ],
+            "_FillValue": NaN,
+            "description": "Absolute value of the platform velocity scaled at the target height",
+            "grid_mapping": "projection",
+            "long_name": "Ground track velocity",
+            "units": "meters / second"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/radarGrid/heightAboveEllipsoid",
+          "shape": [
+            20
+          ],
+          "dtype": "float64",
+          "attributes": {
+            "CLASS": "DIMENSION_SCALE",
+            "NAME": "",
+            "REFERENCE_LIST": [
+              [
+                "<HDF5 object reference>",
+                0
+              ],
+              [
+                "<HDF5 object reference>",
+                0
+              ],
+              [
+                "<HDF5 object reference>",
+                0
+              ],
+              [
+                "<HDF5 object reference>",
+                0
+              ],
+              [
+                "<HDF5 object reference>",
+                0
+              ],
+              [
+                "<HDF5 object reference>",
+                0
+              ],
+              [
+                "<HDF5 object reference>",
+                0
+              ],
+              [
+                "<HDF5 object reference>",
+                0
+              ],
+              [
+                "<HDF5 object reference>",
+                0
+              ],
+              [
+                "<HDF5 object reference>",
+                0
+              ],
+              [
+                "<HDF5 object reference>",
+                0
+              ],
+              [
+                "<HDF5 object reference>",
+                0
+              ],
+              [
+                "<HDF5 object reference>",
+                0
+              ],
+              [
+                "<HDF5 object reference>",
+                0
+              ]
+            ],
+            "description": "Height values above WGS84 Ellipsoid corresponding to the radar grid",
+            "standard_name": "height_above_reference_ellipsoid",
+            "units": "meters"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/radarGrid/hydrostaticTroposphericPhaseScreen",
+          "shape": [
+            20,
+            261,
+            194
+          ],
+          "dtype": "float64",
+          "attributes": {
+            "DIMENSION_LIST": [
+              [
+                "<HDF5 object reference>"
+              ],
+              [
+                "<HDF5 object reference>"
+              ],
+              [
+                "<HDF5 object reference>"
+              ]
+            ],
+            "_FillValue": NaN,
+            "description": "Wet component of the troposphere phase screen",
+            "grid_mapping": "projection",
+            "units": "radians"
+          },
+          "candidate": true
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/radarGrid/incidenceAngle",
+          "shape": [
+            20,
+            261,
+            194
+          ],
+          "dtype": "float32",
+          "attributes": {
+            "DIMENSION_LIST": [
+              [
+                "<HDF5 object reference>"
+              ],
+              [
+                "<HDF5 object reference>"
+              ],
+              [
+                "<HDF5 object reference>"
+              ]
+            ],
+            "_FillValue": NaN,
+            "description": "Incidence angle is defined as the angle between the LOS vector and the normal to the ellipsoid at the target height",
+            "grid_mapping": "projection",
+            "long_name": "Incidence angle",
+            "units": "degrees",
+            "valid_max": 90.0,
+            "valid_min": 0.0
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/radarGrid/losUnitVectorX",
+          "shape": [
+            20,
+            261,
+            194
+          ],
+          "dtype": "float32",
+          "attributes": {
+            "DIMENSION_LIST": [
+              [
+                "<HDF5 object reference>"
+              ],
+              [
+                "<HDF5 object reference>"
+              ],
+              [
+                "<HDF5 object reference>"
+              ]
+            ],
+            "_FillValue": NaN,
+            "description": "East component of unit vector of LOS from target to sensor",
+            "grid_mapping": "projection",
+            "long_name": "LOS unit vector X",
+            "units": "1",
+            "valid_max": 1.0,
+            "valid_min": -1.0
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/radarGrid/losUnitVectorY",
+          "shape": [
+            20,
+            261,
+            194
+          ],
+          "dtype": "float32",
+          "attributes": {
+            "DIMENSION_LIST": [
+              [
+                "<HDF5 object reference>"
+              ],
+              [
+                "<HDF5 object reference>"
+              ],
+              [
+                "<HDF5 object reference>"
+              ]
+            ],
+            "_FillValue": NaN,
+            "description": "North component of unit vector of LOS from target to sensor",
+            "grid_mapping": "projection",
+            "long_name": "LOS unit vector Y",
+            "units": "1",
+            "valid_max": 1.0,
+            "valid_min": -1.0
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/radarGrid/parallelBaseline",
+          "shape": [
+            2,
+            261,
+            194
+          ],
+          "dtype": "float32",
+          "attributes": {
+            "DIMENSION_LIST": [
+              [],
+              [
+                "<HDF5 object reference>"
+              ],
+              [
+                "<HDF5 object reference>"
+              ]
+            ],
+            "_FillValue": NaN,
+            "description": "Parallel component of the InSAR baseline",
+            "grid_mapping": "projection",
+            "long_name": "Parallel baseline",
+            "max_value": 222.41830444335938,
+            "mean_value": 207.48233032226562,
+            "min_value": 192.12913513183594,
+            "sample_stddev": 8.013899803161621,
+            "units": "meters"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/radarGrid/perpendicularBaseline",
+          "shape": [
+            2,
+            261,
+            194
+          ],
+          "dtype": "float32",
+          "attributes": {
+            "DIMENSION_LIST": [
+              [],
+              [
+                "<HDF5 object reference>"
+              ],
+              [
+                "<HDF5 object reference>"
+              ]
+            ],
+            "_FillValue": NaN,
+            "description": "Perpendicular component of the InSAR baseline",
+            "grid_mapping": "projection",
+            "long_name": "Perpendicular baseline",
+            "max_value": -310.9052734375,
+            "mean_value": -322.0662536621094,
+            "min_value": -333.2519836425781,
+            "sample_stddev": 5.149807453155518,
+            "units": "meters"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/radarGrid/projection",
+          "shape": [],
+          "dtype": "uint32",
+          "attributes": {
+            "description": "Product map grid projection: EPSG code, with additional projection information as HDF5 Attributes",
+            "ellipsoid": "WGS84",
+            "epsg_code": 32611,
+            "false_easting": 500000.0,
+            "false_northing": 0.0,
+            "grid_mapping_name": "transverse_mercator",
+            "inverse_flattening": 298.257223563,
+            "latitude_of_projection_origin": 0.0,
+            "longitude_of_central_meridian": -117.0,
+            "longitude_of_projection_origin": 0.0,
+            "scale_factor_at_central_meridian": 0.9996,
+            "semi_major_axis": 6378137.0,
+            "spatial_ref": "PROJCS[\"WGS 84 / UTM zone 11N\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0,AUTHORITY[\"EPSG\",\"8901\"]],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],PROJECTION[\"Transverse_Mercator\"],PARAMETER[\"latitude_of_origin\",0],PARAMETER[\"central_meridian\",-117],PARAMETER[\"scale_factor\",0.9996],PARAMETER[\"false_easting\",500000],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH],AUTHORITY[\"EPSG\",\"32611\"]]",
+            "utm_zone_number": 11
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/radarGrid/referenceSlantRange",
+          "shape": [
+            20,
+            261,
+            194
+          ],
+          "dtype": "float64",
+          "attributes": {
+            "DIMENSION_LIST": [
+              [
+                "<HDF5 object reference>"
+              ],
+              [
+                "<HDF5 object reference>"
+              ],
+              [
+                "<HDF5 object reference>"
+              ]
+            ],
+            "_FillValue": NaN,
+            "description": "Slant range of the reference RSLC in meters",
+            "grid_mapping": "projection",
+            "long_name": "Slant range",
+            "units": "meters"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/radarGrid/referenceZeroDopplerAzimuthTime",
+          "shape": [
+            20,
+            261,
+            194
+          ],
+          "dtype": "float64",
+          "attributes": {
+            "DIMENSION_LIST": [
+              [
+                "<HDF5 object reference>"
+              ],
+              [
+                "<HDF5 object reference>"
+              ],
+              [
+                "<HDF5 object reference>"
+              ]
+            ],
+            "_FillValue": NaN,
+            "description": "Zero doppler azimuth time of the reference RSLC image",
+            "grid_mapping": "projection",
+            "long_name": "Zero-Doppler azimuth time",
+            "units": "seconds since 2008-10-12T00:00:00"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/radarGrid/secondarySlantRange",
+          "shape": [
+            20,
+            261,
+            194
+          ],
+          "dtype": "float64",
+          "attributes": {
+            "DIMENSION_LIST": [
+              [
+                "<HDF5 object reference>"
+              ],
+              [
+                "<HDF5 object reference>"
+              ],
+              [
+                "<HDF5 object reference>"
+              ]
+            ],
+            "_FillValue": NaN,
+            "description": "Slant range of the secondary RSLC in meters",
+            "grid_mapping": "projection",
+            "long_name": "slant-range",
+            "units": "meters"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/radarGrid/secondaryZeroDopplerAzimuthTime",
+          "shape": [
+            20,
+            261,
+            194
+          ],
+          "dtype": "float64",
+          "attributes": {
+            "DIMENSION_LIST": [
+              [
+                "<HDF5 object reference>"
+              ],
+              [
+                "<HDF5 object reference>"
+              ],
+              [
+                "<HDF5 object reference>"
+              ]
+            ],
+            "_FillValue": NaN,
+            "description": "Zero Doppler azimuth time in seconds since UTC epoch of the reference RSLC image",
+            "grid_mapping": "projection",
+            "long_name": "zero-Doppler azimuth time",
+            "units": "seconds since 2008-11-27T00:00:00"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/radarGrid/slantRangeSolidEarthTidesPhase",
+          "shape": [
+            20,
+            261,
+            194
+          ],
+          "dtype": "float64",
+          "attributes": {
+            "DIMENSION_LIST": [
+              [
+                "<HDF5 object reference>"
+              ],
+              [
+                "<HDF5 object reference>"
+              ],
+              [
+                "<HDF5 object reference>"
+              ]
+            ],
+            "_FillValue": NaN,
+            "description": "Solid Earth tides phase along slant range direction",
+            "grid_mapping": "projection",
+            "units": "radians"
+          },
+          "candidate": true
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/radarGrid/wetTroposphericPhaseScreen",
+          "shape": [
+            20,
+            261,
+            194
+          ],
+          "dtype": "float64",
+          "attributes": {
+            "DIMENSION_LIST": [
+              [
+                "<HDF5 object reference>"
+              ],
+              [
+                "<HDF5 object reference>"
+              ],
+              [
+                "<HDF5 object reference>"
+              ]
+            ],
+            "_FillValue": NaN,
+            "description": "Solid Earth tides phase in along-track direction",
+            "grid_mapping": "projection",
+            "units": "radians"
+          },
+          "candidate": true
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/radarGrid/xCoordinates",
+          "shape": [
+            194
+          ],
+          "dtype": "float64",
+          "attributes": {
+            "CLASS": "DIMENSION_SCALE",
+            "NAME": "",
+            "REFERENCE_LIST": [
+              [
+                "<HDF5 object reference>",
+                2
+              ],
+              [
+                "<HDF5 object reference>",
+                2
+              ],
+              [
+                "<HDF5 object reference>",
+                2
+              ],
+              [
+                "<HDF5 object reference>",
+                2
+              ],
+              [
+                "<HDF5 object reference>",
+                2
+              ],
+              [
+                "<HDF5 object reference>",
+                2
+              ],
+              [
+                "<HDF5 object reference>",
+                2
+              ],
+              [
+                "<HDF5 object reference>",
+                2
+              ],
+              [
+                "<HDF5 object reference>",
+                2
+              ],
+              [
+                "<HDF5 object reference>",
+                2
+              ],
+              [
+                "<HDF5 object reference>",
+                2
+              ],
+              [
+                "<HDF5 object reference>",
+                2
+              ],
+              [
+                "<HDF5 object reference>",
+                2
+              ],
+              [
+                "<HDF5 object reference>",
+                2
+              ],
+              [
+                "<HDF5 object reference>",
+                2
+              ],
+              [
+                "<HDF5 object reference>",
+                2
+              ]
+            ],
+            "description": "X coordinates in specified projection",
+            "long_name": "X coordinate of projection",
+            "standard_name": "projection_x_coordinate",
+            "units": "meters"
+          },
+          "candidate": true
+        },
+        {
+          "path": "science/LSAR/GUNW/metadata/radarGrid/yCoordinates",
+          "shape": [
+            261
+          ],
+          "dtype": "float64",
+          "attributes": {
+            "CLASS": "DIMENSION_SCALE",
+            "NAME": "",
+            "REFERENCE_LIST": [
+              [
+                "<HDF5 object reference>",
+                1
+              ],
+              [
+                "<HDF5 object reference>",
+                1
+              ],
+              [
+                "<HDF5 object reference>",
+                1
+              ],
+              [
+                "<HDF5 object reference>",
+                1
+              ],
+              [
+                "<HDF5 object reference>",
+                1
+              ],
+              [
+                "<HDF5 object reference>",
+                1
+              ],
+              [
+                "<HDF5 object reference>",
+                1
+              ],
+              [
+                "<HDF5 object reference>",
+                1
+              ],
+              [
+                "<HDF5 object reference>",
+                1
+              ],
+              [
+                "<HDF5 object reference>",
+                1
+              ],
+              [
+                "<HDF5 object reference>",
+                1
+              ],
+              [
+                "<HDF5 object reference>",
+                1
+              ],
+              [
+                "<HDF5 object reference>",
+                1
+              ],
+              [
+                "<HDF5 object reference>",
+                1
+              ],
+              [
+                "<HDF5 object reference>",
+                1
+              ],
+              [
+                "<HDF5 object reference>",
+                1
+              ]
+            ],
+            "description": "Y coordinates in specified projection",
+            "long_name": "Y coordinate of projection",
+            "standard_name": "projection_y_coordinate",
+            "units": "meters"
+          },
+          "candidate": true
+        },
+        {
+          "path": "science/LSAR/identification/boundingPolygon",
+          "shape": [],
+          "dtype": "|S2120",
+          "attributes": {
+            "description": "OGR compatible WKT representing the bounding polygon of the image. Horizontal coordinates are WGS84 longitude followed by latitude (both in degrees), and the vertical coordinate is the height above the WGS84 ellipsoid in meters. The first point corresponds to the start-time, near-range radar coordinate, and the perimeter is traversed in counterclockwise order on the map. This means the traversal order in radar coordinates differs for left-looking and right-looking sensors. The polygon includes the four corners of the radar grid, with equal numbers of points distributed evenly in radar coordinates along each edge",
+            "epsg": "4326",
+            "ogr_geometry": "polygon"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/identification/compositeReleaseId",
+          "shape": [],
+          "dtype": "|S6",
+          "attributes": {
+            "description": "Unique version identifier of the science data production system"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/identification/diagnosticModeFlag",
+          "shape": [],
+          "dtype": "uint8",
+          "attributes": {
+            "description": "Indicates if the radar operation mode is a diagnostic mode (1-2) or DBFed science (0): 0, 1, or 2"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/identification/frameNumber",
+          "shape": [],
+          "dtype": "uint16",
+          "attributes": {
+            "description": "Frame number"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/identification/granuleId",
+          "shape": [],
+          "dtype": "|S123",
+          "attributes": {
+            "description": "Unique granule identification name"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/identification/instrumentName",
+          "shape": [],
+          "dtype": "|S4",
+          "attributes": {
+            "description": "Name of the instrument used to collect the remote sensing data provided in this product"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/identification/isDithered",
+          "shape": [],
+          "dtype": "|S5",
+          "attributes": {
+            "description": "\"True\" if the pulse timing was varied (dithered) during acquisition, \"False\" otherwise"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/identification/isFullFrame",
+          "shape": [],
+          "dtype": "|S4",
+          "attributes": {
+            "description": "\"True\" if the product fully covers a NISAR frame, \"False\" if partial coverage",
+            "frameCoveragePercentage": 99.99999999999999,
+            "thresholdPercentage": 75.0
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/identification/isGeocoded",
+          "shape": [],
+          "dtype": "|S4",
+          "attributes": {
+            "description": "Flag to indicate if the product data is in the radar geometry (\"False\") or in the map geometry (\"True\")"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/identification/isMixedMode",
+          "shape": [],
+          "dtype": "|S5",
+          "attributes": {
+            "description": "\"True\" if this product is generated from reference and secondary RSLCs with different range bandwidths, \"False\" otherwise"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/identification/isUrgentObservation",
+          "shape": [],
+          "dtype": "|S5",
+          "attributes": {
+            "description": "Flag indicating if observation is nominal (\"False\") or urgent (\"True\")"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/identification/listOfFrequencies",
+          "shape": [
+            1
+          ],
+          "dtype": "|S1",
+          "attributes": {
+            "description": "List of frequency layers available in the product"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/identification/lookDirection",
+          "shape": [],
+          "dtype": "|S5",
+          "attributes": {
+            "description": "Look direction, either \"Left\" or \"Right\""
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/identification/missionId",
+          "shape": [],
+          "dtype": "|S4",
+          "attributes": {
+            "description": "Mission identifier"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/identification/orbitPassDirection",
+          "shape": [],
+          "dtype": "|S9",
+          "attributes": {
+            "description": "Orbit direction, either \"Ascending\" or \"Descending\""
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/identification/plannedDatatakeId",
+          "shape": [
+            1
+          ],
+          "dtype": "|S1",
+          "attributes": {
+            "description": "List of planned datatakes included in the product"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/identification/plannedObservationId",
+          "shape": [
+            1
+          ],
+          "dtype": "|S1",
+          "attributes": {
+            "description": "List of planned observations included in the product"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/identification/platformName",
+          "shape": [],
+          "dtype": "|S15",
+          "attributes": {
+            "description": "Name of the platform used to collect the remote sensing data provided in this product"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/identification/processingCenter",
+          "shape": [],
+          "dtype": "|S3",
+          "attributes": {
+            "description": "Data processing center"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/identification/processingDateTime",
+          "shape": [],
+          "dtype": "|S19",
+          "attributes": {
+            "description": "Processing date and time (in UTC) in the format YYYY-mm-ddTHH:MM:SS"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/identification/processingType",
+          "shape": [],
+          "dtype": "|S7",
+          "attributes": {
+            "description": "Nominal (or) Urgent (or) Custom (or) Undefined"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/identification/productDoi",
+          "shape": [],
+          "dtype": "|S19",
+          "attributes": {
+            "description": "Digital Object Identifier (DOI) for the product"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/identification/productLevel",
+          "shape": [],
+          "dtype": "|S2",
+          "attributes": {
+            "description": "Product level. L0A: Unprocessed instrument data; L0B: Reformatted, unprocessed instrument data; L1: Processed instrument data in radar coordinates system; and L2: Processed instrument data in geocoded coordinates system"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/identification/productSpecificationVersion",
+          "shape": [],
+          "dtype": "|S5",
+          "attributes": {
+            "description": "Product specification version which represents the schema of this product"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/identification/productType",
+          "shape": [],
+          "dtype": "|S4",
+          "attributes": {
+            "description": "Product type"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/identification/productVersion",
+          "shape": [],
+          "dtype": "|S5",
+          "attributes": {
+            "description": "Product version which represents the structure of the product and the science content governed by the algorithm, input data, and processing parameters"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/identification/radarBand",
+          "shape": [],
+          "dtype": "|S1",
+          "attributes": {
+            "description": "Acquired frequency band, either \"L\" or \"S\""
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/identification/referenceAbsoluteOrbitNumber",
+          "shape": [],
+          "dtype": "uint32",
+          "attributes": {
+            "description": "Absolute orbit number for the reference RSLC"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/identification/referenceIsJointObservation",
+          "shape": [],
+          "dtype": "|S5",
+          "attributes": {
+            "description": "\"True\" if any portion of the reference RSLC was acquired in a joint observation mode (e.g., L-band and S-band simultaneously), \"False\" otherwise"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/identification/referenceZeroDopplerEndTime",
+          "shape": [],
+          "dtype": "|S29",
+          "attributes": {
+            "description": "Azimuth stop time (in UTC) of reference RSLC product in the format YYYY-mm-ddTHH:MM:SS.sssssssss"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/identification/referenceZeroDopplerStartTime",
+          "shape": [],
+          "dtype": "|S29",
+          "attributes": {
+            "description": "Azimuth start time (in UTC) of reference RSLC product in the format YYYY-mm-ddTHH:MM:SS.sssssssss"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/identification/secondaryAbsoluteOrbitNumber",
+          "shape": [],
+          "dtype": "uint32",
+          "attributes": {
+            "description": "Absolute orbit number for the secondary RSLC"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/identification/secondaryIsJointObservation",
+          "shape": [],
+          "dtype": "|S5",
+          "attributes": {
+            "description": "\"True\" if any portion of the secondary RSLC was acquired in a joint observation mode (e.g., L-band and S-band simultaneously), \"False\" otherwise"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/identification/secondaryZeroDopplerEndTime",
+          "shape": [],
+          "dtype": "|S29",
+          "attributes": {
+            "description": "Azimuth stop time (in UTC) of secondary RSLC product in the format YYYY-mm-ddTHH:MM:SS.sssssssss"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/identification/secondaryZeroDopplerStartTime",
+          "shape": [],
+          "dtype": "|S29",
+          "attributes": {
+            "description": "Azimuth start time (in UTC) of secondary RSLC product in the format YYYY-mm-ddTHH:MM:SS.sssssssss"
+          },
+          "candidate": false
+        },
+        {
+          "path": "science/LSAR/identification/trackNumber",
+          "shape": [],
+          "dtype": "uint32",
+          "attributes": {
+            "description": "Track number"
+          },
+          "candidate": false
+        }
+      ]
+    }
+  }
+]

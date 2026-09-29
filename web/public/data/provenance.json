@@ -1,0 +1,30 @@
+{
+  "mission": "NASA-ISRO NISAR",
+  "product": "GUNW",
+  "processing_level": "L2",
+  "observation": {
+    "reference": "2008-10-12T06:09:11.567105263",
+    "secondary": "2008-11-27T06:10:00.442763158",
+    "temporal_baseline_days": 46
+  },
+  "source_product": "NISAR_L2_PR_GUNW_001_030_A_019_002_2000_SH_20081012T060911_20081012T060925_20081127T061000_20081127T061014_D00404_N_F_J_001",
+  "source_url": "https://nisar.asf.earthdatacloud.nasa.gov/NISAR-SAMPLE-DATA/GUNW/NISAR_L2_PR_GUNW_001_030_A_019_002_2000_SH_20081012T060911_20081012T060925_20081127T061000_20081127T061014_D00404_N_F_J_001/NISAR_L2_PR_GUNW_001_030_A_019_002_2000_SH_20081012T060911_20081012T060925_20081127T061000_20081127T061014_D00404_N_F_J_001.h5",
+  "download_date": "2026-09-29",
+  "processing": [
+    "Read science/LSAR/GUNW/grids/frequencyA/unwrappedInterferogram/HH/unwrappedPhase.",
+    "Applied science/LSAR/GUNW/grids/frequencyA/unwrappedInterferogram/mask and science/LSAR/GUNW/grids/frequencyA/unwrappedInterferogram/HH/coherenceMagnitude.",
+    "Excluded non-finite values, fill 255, water, invalid subswaths, and coherence below 0.3.",
+    "Exported a bounded EPSG:32611 static preview."
+  ],
+  "units": {
+    "measurement": "radians",
+    "coordinates": "meters in EPSG:32611",
+    "coherence": "unitless"
+  },
+  "limitations": [
+    "This is a NASA/ASF sample product with historical surrogate-era acquisition dates.",
+    "The displayed scientific layer is unwrapped phase in radians, not converted displacement.",
+    "One interferogram pair is available; a persistent multi-observation time series is not established.",
+    "Radar phase alone does not establish a deformation cause or predict a disaster."
+  ]
+}

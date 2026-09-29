@@ -1,0 +1,17 @@
+{
+  "event_id": "TC001",
+  "status": "single_interferogram_pair",
+  "observations": [
+    {
+      "id": "reference",
+      "date": "2008-10-12T06:09:11.567105263",
+      "role": "reference_acquisition"
+    },
+    {
+      "id": "secondary",
+      "date": "2008-11-27T06:10:00.442763158",
+      "role": "secondary_acquisition"
+    }
+  ],
+  "message": "Two acquisitions define this interferogram pair; a persistent multi-pair time series is not claimed."
+}

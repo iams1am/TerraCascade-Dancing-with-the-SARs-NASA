@@ -1,0 +1,2058 @@
+Below is the Markdown guide I would use. 
+
+```text
+PROJECT_GUIDE.md
+```
+
+---
+
+# TerraCascade — Complete Development Guide
+
+## NASA Space Apps Challenge 2026 — Dancing with the SARs
+
+**Project:** TerraCascade  
+**Tagline:** *See the change. Understand the chain.*  
+**Primary use case:** Persistent ground deformation / urban subsidence  
+**Primary data:** NASA-ISRO NISAR GUNW  
+**October MVP:** One scientifically defensible end-to-end surface-deformation demonstration
+
+---
+
+# 1. Project Objective
+
+[certain] TerraCascade is intended to use NISAR radar observations to detect, visualize, and explain changes occurring on Earth's surface. Your proposal explicitly centers the project on NISAR-derived surface change rather than using NASA data merely as a decorative map layer. :chatgpt-content-reference{index="1"}
+
+## October MVP objective
+
+Build a working web application in which a user can:
+
+1. Open TerraCascade.
+2. Select one real demonstration location.
+3. See a real NISAR-derived deformation layer.
+4. Examine at least two temporal observations/products.
+5. See numerical measurements derived from the data.
+6. See a change-over-time visualization.
+7. Understand whether the change appears persistent.
+8. Open **Change DNA**.
+9. Open **Cascade Mode**.
+10. distinguish:
+   - Observed evidence
+   - Derived results
+   - Contextual information
+   - Potential implications
+11. See the underlying datasets and sources.
+
+[certain] That evidence separation is already one of the strongest elements of the proposal. :chatgpt-content-reference{index="2"}
+
+---
+
+# 2. What We Are NOT Building Yet
+
+[Likely] Do **not** attempt these before the October qualification submission:
+
+- complete global NISAR processing;
+- arbitrary user-selected NISAR scenes;
+- wildfire pipeline;
+- wetland pipeline;
+- glacier pipeline;
+- live satellite-data processing;
+- full PostGIS database;
+- Cesium 3D globe;
+- machine-learning classifier;
+- custom hazard-prediction model;
+- LLM scientific analysis;
+- mobile application;
+- user accounts;
+- alert system.
+
+[Likely] These are November/stretch features.
+
+---
+
+# 3. The October MVP
+
+The entire MVP should follow this path:
+
+```text
+REAL NISAR DATA
+      │
+      ▼
+SELECTED DEMONSTRATION REGION
+      │
+      ▼
+NISAR GUNW PRODUCT
+      │
+      ▼
+EXTRACT RELEVANT SCIENTIFIC LAYER
+      │
+      ▼
+CROP + CLEAN + CONVERT
+      │
+      ▼
+DEFORMATION VISUALIZATION
+      │
+      ├──────────────► Statistics
+      │
+      ├──────────────► Time series
+      │
+      ├──────────────► Change DNA
+      │
+      └──────────────► Cascade Mode
+                            │
+                            ▼
+                 Evidence + limitations
+```
+
+---
+
+# 4. Scientific Rule #1
+
+## Never invent measurements
+
+[certain] Values such as:
+
+```text
+-4 mm
+-11 mm
+-19 mm
+-27 mm
+```
+
+in the proposal are illustrative examples, not verified observations. :chatgpt-content-reference{index="3"}
+
+Therefore:
+
+```text
+DO NOT:
+hardcode impressive-looking displacement numbers.
+
+DO:
+derive every displayed scientific number from the
+actual processed data.
+```
+
+Every displayed measurement should ultimately answer:
+
+```text
+Where did this value come from?
+Which NISAR product?
+Which observation?
+Which variable?
+Which processing step?
+Which units?
+```
+
+---
+
+# 5. Scientific Rule #2
+
+## TerraCascade detects change; it does not diagnose causes automatically
+
+[certain] Your proposal correctly recognizes that SAR observations alone cannot prove that groundwater extraction caused subsidence, that a flood will happen, or that infrastructure has been damaged. :chatgpt-content-reference{index="4"}
+
+Use wording such as:
+
+```text
+OBSERVED
+Surface displacement signal detected.
+
+DERIVED
+The signal persists across the available observations.
+
+CONTEXTUAL
+The area contains roads and dense development.
+
+POTENTIAL
+Persistent deformation could increase infrastructure
+exposure and should be investigated further.
+```
+
+Do **not** write:
+
+```text
+NASA detected an upcoming disaster.
+```
+
+or:
+
+```text
+This satellite proves groundwater caused the subsidence.
+```
+
+---
+
+# 6. Recommended October Technology Stack
+
+[Likely] Simplify the original architecture aggressively for qualification.
+
+## Scientific processing
+
+```text
+Python
+NumPy
+Pandas
+h5py
+Xarray
+Rasterio
+GeoPandas
+Matplotlib
+```
+
+## Frontend
+
+```text
+Next.js
+React
+TypeScript
+Tailwind CSS
+```
+
+## Map
+
+[Likely] Use **Leaflet / React-Leaflet** first.
+
+Do **not** spend qualification time building a complicated Cesium globe.
+
+## Charts
+
+```text
+Recharts
+```
+
+## October data architecture
+
+Do this:
+
+```text
+NISAR
+  ↓
+Python preprocessing
+  ↓
+JSON + PNG/GeoJSON/raster assets
+  ↓
+Next.js
+  ↓
+browser
+```
+
+Do **not** initially do:
+
+```text
+NISAR
+ ↓
+processing service
+ ↓
+FastAPI
+ ↓
+PostgreSQL
+ ↓
+PostGIS
+ ↓
+object storage
+ ↓
+Next.js
+```
+
+[Likely] The second architecture is useful later, but it creates unnecessary failure points for your immediate deadline.
+
+---
+
+# 7. October System Architecture
+
+```text
+┌─────────────────────────────────┐
+│          NISAR DATA             │
+│                                 │
+│         GUNW product            │
+└───────────────┬─────────────────┘
+                │
+                ▼
+┌─────────────────────────────────┐
+│      PYTHON DATA PIPELINE       │
+│                                 │
+│ inspect                         │
+│ extract                         │
+│ mask                            │
+│ crop                            │
+│ calculate                       │
+│ visualize                       │
+└───────────────┬─────────────────┘
+                │
+                ▼
+┌─────────────────────────────────┐
+│       PROCESSED OUTPUT          │
+│                                 │
+│ event.json                      │
+│ observations.json               │
+│ deformation.png                 │
+│ bounds.json                     │
+│ timeseries.json                 │
+└───────────────┬─────────────────┘
+                │
+                ▼
+┌─────────────────────────────────┐
+│          NEXT.JS APP            │
+│                                 │
+│ Landing                         │
+│ Explorer                        │
+│ Timeline                        │
+│ Change DNA                      │
+│ Cascade                         │
+│ Sources                         │
+└─────────────────────────────────┘
+```
+
+---
+
+# 8. Repository Structure
+
+Create:
+
+```text
+terracascade/
+│
+├── AGENTS.md
+├── PROJECT_GUIDE.md
+├── README.md
+├── .gitignore
+│
+├── data/
+│   ├── README.md
+│   ├── raw/
+│   ├── intermediate/
+│   └── processed/
+│
+├── science/
+│   ├── inspect_nisar.py
+│   ├── extract_region.py
+│   ├── process_gunw.py
+│   ├── compute_statistics.py
+│   ├── export_web_assets.py
+│   └── validate_outputs.py
+│
+├── notebooks/
+│   └── nisar_exploration.ipynb
+│
+├── web/
+│   ├── app/
+│   ├── components/
+│   ├── lib/
+│   ├── public/
+│   └── package.json
+│
+├── tests/
+│   ├── science/
+│   └── web/
+│
+├── docs/
+│   ├── architecture/
+│   ├── screenshots/
+│   ├── methodology/
+│   └── sources/
+│
+└── submission/
+    ├── video/
+    ├── script/
+    └── checklist.md
+```
+
+---
+
+# 9. Phase 0 — Repository and Agent Setup
+
+## Goal
+
+Create a clean repository before writing features.
+
+### Step 1
+
+Create the repository.
+
+```bash
+mkdir terracascade
+cd terracascade
+git init
+```
+
+### Step 2
+
+Start Codex:
+
+```bash
+codex
+```
+
+[certain] Current OpenAI documentation says Codex can be launched from the terminal with `codex`, and `/init` can generate an `AGENTS.md` scaffold for the current project. :chatgpt-content-reference{index="5"}
+
+Inside Codex:
+
+```text
+/init
+```
+
+[certain] Codex CLI automatically reads `AGENTS.md` files and uses them as repository instructions. :chatgpt-content-reference{index="6"}
+
+---
+
+# 10. Recommended AGENTS.md
+
+[Likely] Keep it concise. Current OpenAI guidance for Astra specifically recommends reconsidering overgrown prompts and instruction files rather than stuffing everything into agent context. :chatgpt-content-reference{index="7"}
+
+Use:
+
+```markdown
+# TerraCascade Agent Instructions
+
+## Mission
+
+Build TerraCascade, a NASA Space Apps 2026 Dancing with the SARs
+interactive web application using real NISAR observations.
+
+The October MVP focuses only on one ground-deformation demonstration.
+
+## Non-negotiable scientific rules
+
+1. Never invent NISAR measurements.
+2. Never hardcode scientific results unless clearly marked mock/demo data.
+3. Keep measurement and interpretation separate.
+4. Use these evidence labels:
+   - OBSERVED
+   - DERIVED
+   - CONTEXTUAL
+   - POTENTIAL
+5. Never claim TerraCascade predicts disasters.
+6. Preserve source metadata and units.
+7. Any unknown NISAR variable/path must be inspected rather than guessed.
+
+## Development rules
+
+1. Work one phase at a time.
+2. Do not implement future phases unless explicitly requested.
+3. Before changing files, inspect existing code.
+4. Keep functions small and documented.
+5. Add tests for scientific calculations.
+6. Run relevant tests before completing a phase.
+7. Report:
+   - files changed
+   - commands run
+   - tests performed
+   - remaining problems
+
+## MVP stack
+
+Scientific processing:
+Python, NumPy, Xarray, h5py, Rasterio, GeoPandas.
+
+Frontend:
+Next.js, React, TypeScript, Tailwind CSS.
+
+Mapping:
+Leaflet / React-Leaflet.
+
+Charts:
+Recharts.
+
+## MVP scope
+
+Build:
+- one real NISAR deformation case
+- interactive map
+- observation timeline
+- measurements
+- Change DNA
+- Cascade Mode
+- evidence labels
+- source provenance
+
+Do not build yet:
+- wildfire
+- wetland
+- glacier
+- LLM
+- PostGIS
+- user accounts
+- live arbitrary NISAR processing
+- disaster prediction
+```
+
+---
+
+# 11. Phase 1 — Data Discovery
+
+## Objective
+
+[certain] **Do not build the frontend first.**
+
+[Likely] The first technical milestone should be:
+
+> We successfully opened a real NISAR file and identified usable scientific data.
+
+---
+
+## Step 1 — acquire one usable NISAR dataset
+
+Create:
+
+```text
+data/raw/
+```
+
+Place the NISAR product there.
+
+Record:
+
+```text
+filename
+product type
+observation dates
+region
+source URL
+download date
+processing level
+```
+
+Create:
+
+```text
+data/README.md
+```
+
+---
+
+## Step 2 — inspect the file before writing scientific logic
+
+Tell Codex:
+
+```text
+We are starting Phase 1 of TerraCascade.
+
+Do not build any frontend.
+
+Inspect the NISAR files under data/raw/.
+
+Create science/inspect_nisar.py.
+
+Requirements:
+
+1. Detect the file type.
+2. Recursively enumerate groups and datasets.
+3. Print:
+   - dataset path
+   - shape
+   - dtype
+   - attributes
+   - units where available
+4. Identify coordinate-related datasets.
+5. Identify potentially relevant GUNW displacement,
+   unwrapped phase, coherence, quality, or mask layers.
+6. Do not guess dataset paths.
+7. Do not calculate deformation yet.
+8. Write findings to docs/methodology/nisar_inventory.md.
+9. Do not modify raw data.
+
+Run the script and summarize what was actually found.
+```
+
+---
+
+# 12. Phase 1 Exit Condition
+
+Do not continue until you can answer:
+
+```text
+✓ What product do we have?
+
+✓ What location does it cover?
+
+✓ What dates does it represent?
+
+✓ Which scientific variable are we using?
+
+✓ What are its units?
+
+✓ What coordinate system does it use?
+
+✓ Which quality/mask variables exist?
+
+✓ Can Python successfully read it?
+```
+
+If any answer is unknown:
+
+```text
+STOP.
+Investigate it.
+```
+
+---
+
+# 13. Phase 2 — Create the First Scientific Visualization
+
+## Objective
+
+Produce a scientifically meaningful local plot completely outside the web application.
+
+The required milestone is:
+
+```text
+REAL NISAR FILE
+      ↓
+Python
+      ↓
+2D scientific plot
+```
+
+---
+
+## Codex prompt
+
+```text
+Proceed to TerraCascade Phase 2 only.
+
+Read:
+- AGENTS.md
+- PROJECT_GUIDE.md
+- docs/methodology/nisar_inventory.md
+
+Using only dataset paths verified during Phase 1:
+
+1. Create science/process_gunw.py.
+2. Read the selected scientific layer.
+3. Read its coordinates/georeferencing.
+4. Handle invalid/fill values.
+5. Apply documented quality masks if appropriate.
+6. Print minimum, maximum, median, valid-pixel count,
+   and relevant units.
+7. Generate a scientific preview plot.
+8. Save the plot under docs/screenshots/.
+9. Save processing metadata to JSON.
+10. Do not invent conversion factors.
+11. Do not claim subsidence yet unless the measurement
+    supports that interpretation.
+12. Add tests for any numerical transformation.
+
+Stop after producing the validated scientific preview.
+Report exactly which variable was used.
+```
+
+---
+
+# 14. Scientific Validation Gate
+
+Before continuing, manually examine:
+
+```text
+Does the map look geographically reasonable?
+
+Are fill values removed?
+
+Are units correct?
+
+Are values realistic for this product?
+
+Is north/location correct?
+
+Does metadata match the visualization?
+```
+
+[Likely] If this phase fails, spending six hours on a beautiful frontend is pointless.
+
+---
+
+# 15. Phase 3 — Select the Demonstration Area
+
+## Goal
+
+Turn the huge satellite dataset into one compelling case.
+
+Choose a bounded region:
+
+```text
+latitude minimum
+latitude maximum
+longitude minimum
+longitude maximum
+```
+
+The region must have:
+
+```text
+interesting signal
++
+good data quality
++
+understandable geography
++
+visual clarity
+```
+
+---
+
+# 16. Codex Prompt — Region Extraction
+
+```text
+Proceed to TerraCascade Phase 3.
+
+Using the validated NISAR layer from Phase 2:
+
+1. Add configurable AOI bounds.
+2. Extract only the chosen demonstration region.
+3. Preserve georeferencing.
+4. Calculate:
+   - valid pixel count
+   - minimum
+   - maximum
+   - median
+   - mean only if scientifically meaningful
+5. Export:
+   - processed raster/array
+   - visualization PNG
+   - geographic bounds
+   - metadata JSON
+6. Never invent statistics.
+7. Record every transformation.
+
+Create:
+
+data/processed/demo_region/
+    layer.png
+    bounds.json
+    statistics.json
+    metadata.json
+
+Also create:
+docs/methodology/processing.md
+
+Do not work on the frontend.
+```
+
+---
+
+# 17. Phase 4 — Temporal Story
+
+## Goal
+
+[certain] TerraCascade becomes significantly more aligned with your proposal when it shows how measurements evolve through time rather than showing one static image. Your original design calls this **Time Travel**. :chatgpt-content-reference{index="8"}
+
+Ideal:
+
+```text
+Observation A
+    ↓
+Observation B
+    ↓
+Observation C
+    ↓
+Observation D
+```
+
+Minimum acceptable qualification version:
+
+```text
+Observation A
+        ↓
+Observation B
+```
+
+---
+
+# 18. Temporal Output Schema
+
+Create data like:
+
+```json
+{
+  "event_id": "TC001",
+  "location": {
+    "name": "Demonstration Region"
+  },
+  "observations": [
+    {
+      "id": "obs_001",
+      "date": "YYYY-MM-DD",
+      "value": null,
+      "unit": "verified unit",
+      "source_product": "..."
+    }
+  ]
+}
+```
+
+Never leave invented values in the final submission.
+
+---
+
+# 19. Codex Prompt — Temporal Processing
+
+```text
+Implement TerraCascade Phase 4.
+
+Goal:
+Create a scientifically traceable temporal dataset for the
+demonstration region.
+
+Requirements:
+
+1. Locate all verified observations/products that can
+   legitimately be compared.
+2. Validate temporal ordering.
+3. Ensure measurements use compatible units.
+4. Ensure spatial regions align.
+5. Compute only scientifically justified differences.
+6. Output observations.json.
+7. Output timeseries.json.
+8. Create a validation plot.
+9. Record source filenames for every observation.
+10. Clearly document limitations.
+
+If the files cannot legitimately be compared, STOP rather
+than manufacturing a time series.
+
+Do not build frontend features yet.
+```
+
+That final instruction is important.
+
+---
+
+# 20. Phase 5 — Prepare Web Assets
+
+## Goal
+
+Convert scientific output into simple frontend-readable files.
+
+Create:
+
+```text
+web/public/data/
+│
+├── event.json
+├── observations.json
+├── timeseries.json
+├── cascade.json
+├── change-dna.json
+│
+└── imagery/
+    ├── observation-01.png
+    └── observation-02.png
+```
+
+---
+
+# 21. Event Data Model
+
+Example:
+
+```json
+{
+  "id": "TC001",
+  "title": "Persistent Surface Deformation",
+  "location": "Verified location",
+  "type": "ground_deformation",
+  "summary": "Surface displacement signal observed across available NISAR measurements.",
+  "evidence_level": "OBSERVED",
+  "sources": []
+}
+```
+
+---
+
+# 22. Phase 6 — Frontend Skeleton
+
+Now—and only now—start the web application.
+
+---
+
+## Codex Prompt
+
+```text
+Proceed to TerraCascade Phase 6.
+
+Create the Next.js frontend under web/.
+
+Use:
+- TypeScript
+- Tailwind CSS
+- React-Leaflet
+- Recharts
+
+Do not add a backend.
+
+Build these routes:
+
+/
+    Landing page
+
+/explore
+    Main TerraCascade explorer
+
+/methodology
+    Scientific methodology
+
+/about
+    Project + challenge information
+
+Use processed static data from web/public/data/.
+
+Design direction:
+scientific Earth-observation dashboard,
+dark interface,
+clean typography,
+large map,
+minimal clutter.
+
+Do not add fake data.
+
+Do not implement Change DNA or Cascade Mode yet.
+
+Verify:
+npm install
+npm run lint
+npm run build
+```
+
+---
+
+# 23. Landing Page
+
+Keep it extremely simple.
+
+```text
+TERRACASCADE
+
+Earth rarely changes all at once.
+
+Sometimes the signal is only millimeters.
+
+[NISAR SURFACE CHANGE EXPLORER]
+
+               Explore Earth
+```
+
+Below:
+
+```text
+Powered by NASA-ISRO NISAR observations
+NASA Space Apps Challenge 2026
+Dancing with the SARs
+```
+
+---
+
+# 24. Phase 7 — Main Explorer
+
+The page should approximately look like:
+
+```text
+┌──────────────────────────────────────────────────────────┐
+│ TERRACASCADE               NISAR SURFACE CHANGE EXPLORER │
+├────────────────────────────────┬─────────────────────────┤
+│                                │                         │
+│                                │ EVENT                   │
+│                                │                         │
+│             MAP                │ Persistent deformation  │
+│                                │                         │
+│                                │ Location                │
+│                                │ Dates                   │
+│                                │ Measurement             │
+│                                │ Evidence                │
+│                                │                         │
+├────────────────────────────────┴─────────────────────────┤
+│                                                        │
+│                 TIME / OBSERVATION                     │
+│  ●────────────●────────────●────────────●              │
+│                                                        │
+├────────────────────────────────────────────────────────┤
+│                   DEFORMATION GRAPH                    │
+└────────────────────────────────────────────────────────┘
+```
+
+---
+
+# 25. Codex Prompt — Explorer
+
+```text
+Build TerraCascade Phase 7: Change Explorer.
+
+Use only processed scientific assets already present.
+
+Requirements:
+
+1. Full-width interactive Leaflet map.
+2. Display demonstration-region marker/polygon.
+3. Overlay processed NISAR visualization using its
+   real geographic bounds.
+4. Side information panel.
+5. Display:
+   - location
+   - product
+   - observation date
+   - measurement/unit
+   - data source
+6. Add layer visibility control.
+7. Add clear legend.
+8. Add source attribution.
+9. Handle missing data gracefully.
+10. Never display placeholder scientific numbers.
+
+Make the layout usable at 1366x768.
+
+Run lint and production build.
+```
+
+---
+
+# 26. Phase 8 — Time Travel
+
+## Goal
+
+Let the judge visibly move through observations.
+
+UI:
+
+```text
+OBSERVATION TIMELINE
+
+June        July        August      September
+ ●───────────●────────────●────────────●
+```
+
+When selected:
+
+```text
+map layer changes
++
+statistics change
++
+chart highlight changes
++
+date changes
+```
+
+---
+
+## Codex Prompt
+
+```text
+Implement TerraCascade Phase 8: Time Travel.
+
+Read observations.json and timeseries.json.
+
+Create a reusable ObservationTimeline component.
+
+When the selected observation changes:
+
+1. update raster/image overlay;
+2. update date;
+3. update measurement statistics;
+4. update active chart point;
+5. update source metadata.
+
+Animate only UI transitions.
+Do not interpolate or fabricate scientific observations.
+
+Add tests for observation selection logic.
+```
+
+---
+
+# 27. Phase 9 — Change DNA
+
+[certain] Change DNA is intended in your proposal to summarize characteristics such as displacement, persistence, coherence and other signals. :chatgpt-content-reference{index="9"}
+
+[Likely] Do **not** implement the arbitrary weighted `78/100` TerraCascade score yet.
+
+Instead use transparent indicators.
+
+Example:
+
+```text
+CHANGE DNA
+────────────────────────
+
+Displacement signal
+█████████░
+
+Temporal persistence
+████████░░
+
+Data quality
+█████████░
+
+Coherence
+███████░░░
+
+Context availability
+██████░░░░
+```
+
+Each must have:
+
+```text
+What this means
+How calculated
+Source
+```
+
+---
+
+## Codex Prompt
+
+```text
+Implement TerraCascade Phase 9: Change DNA.
+
+Do not create an opaque combined score.
+
+Instead create individually explainable indicators based on
+values already generated by the scientific pipeline.
+
+Each indicator must contain:
+
+- name
+- raw value where appropriate
+- normalized visualization value
+- calculation description
+- evidence level
+- data source
+
+If an indicator has not been scientifically computed,
+omit it rather than using placeholder values.
+
+Display horizontal signal bars.
+
+Add an expandable "How was this calculated?" section.
+```
+
+---
+
+# 28. Phase 10 — Cascade Mode
+
+This is your signature feature.
+
+[certain] Your proposal defines Cascade Mode as the progression from observation through contextual evidence to possible consequences while explicitly labeling evidence strength. :chatgpt-content-reference{index="10"}
+
+Example:
+
+```text
+┌───────────────────────────────┐
+│ NISAR displacement            │
+│ OBSERVED                      │
+└──────────────┬────────────────┘
+               ↓
+┌───────────────────────────────┐
+│ Persistent deformation        │
+│ DERIVED                       │
+└──────────────┬────────────────┘
+               ↓
+┌───────────────────────────────┐
+│ Urban / low-lying context     │
+│ CONTEXTUAL                    │
+└──────────────┬────────────────┘
+               ↓
+┌───────────────────────────────┐
+│ Potential infrastructure      │
+│ exposure                      │
+│ POTENTIAL                     │
+└───────────────────────────────┘
+```
+
+---
+
+# 29. Cascade JSON
+
+```json
+{
+  "nodes": [
+    {
+      "id": "n1",
+      "title": "Surface displacement",
+      "evidence": "OBSERVED",
+      "description": "Measured from the selected NISAR product."
+    },
+    {
+      "id": "n2",
+      "title": "Persistent deformation",
+      "evidence": "DERIVED",
+      "description": "Computed from repeated observations."
+    }
+  ],
+  "edges": [
+    {
+      "source": "n1",
+      "target": "n2"
+    }
+  ]
+}
+```
+
+---
+
+# 30. Codex Prompt — Cascade Mode
+
+```text
+Implement TerraCascade Phase 10: Cascade Mode.
+
+Create an interactive vertical evidence graph.
+
+Evidence classes:
+
+OBSERVED
+Direct satellite measurement.
+
+DERIVED
+Computed from measurements.
+
+CONTEXTUAL
+Supported by another dataset.
+
+POTENTIAL
+Interpretation requiring further verification.
+
+Rules:
+
+1. Every node must have a source/evidence justification.
+2. Potential nodes must use cautious language.
+3. Never convert a POTENTIAL claim into an OBSERVED fact.
+4. Users should be able to click a node and see:
+   - explanation
+   - evidence type
+   - source
+   - limitation
+
+Use the existing cascade.json.
+
+Do not introduce AI.
+```
+
+---
+
+# 31. Phase 11 — Data Provenance
+
+Add a **Sources** panel.
+
+Example:
+
+```text
+DATA PROVENANCE
+
+Mission
+NASA-ISRO SAR Mission — NISAR
+
+Product
+GUNW
+
+Observation
+...
+
+Processing level
+...
+
+Source
+...
+
+Downloaded
+...
+
+Processing performed by TerraCascade
+...
+
+Limitations
+...
+```
+
+[Likely] This will substantially increase credibility with technical judges.
+
+---
+
+# 32. Phase 12 — Methodology Page
+
+Create:
+
+```text
+/methodology
+```
+
+Sections:
+
+```text
+1. What is SAR?
+2. What is NISAR?
+3. What product are we using?
+4. What measurement are we displaying?
+5. How did we process it?
+6. How do we identify temporal change?
+7. What does Change DNA mean?
+8. What does Cascade Mode mean?
+9. What can TerraCascade NOT conclude?
+10. Data sources.
+```
+
+---
+
+# 33. Phase 13 — Testing
+
+Codex prompt:
+
+```text
+Perform TerraCascade Phase 13 validation.
+
+Do not add features.
+
+Audit the entire repository.
+
+Scientific checks:
+- no hardcoded fake measurements;
+- source metadata present;
+- units consistent;
+- observation dates correct;
+- invalid values filtered;
+- calculation functions tested.
+
+Frontend checks:
+- no broken routes;
+- map loads;
+- overlays load;
+- timeline works;
+- charts update;
+- Cascade Mode works;
+- sources visible;
+- 1366x768 display works;
+- mobile does not catastrophically break.
+
+Repository checks:
+- README complete;
+- .gitignore correct;
+- no secrets;
+- no huge raw satellite files committed;
+- no API keys;
+- production build succeeds.
+
+Return a table:
+PASS / FAIL / ACTION REQUIRED.
+
+Do not fix issues until after giving the audit.
+```
+
+Then tell it:
+
+```text
+Now fix every ACTION REQUIRED issue from the audit without
+adding new features.
+
+Run all tests and production build again.
+```
+
+---
+
+# 34. Large Satellite Files
+
+[Likely] Do not put multi-gigabyte NISAR source files directly in GitHub.
+
+Use:
+
+```text
+data/raw/
+```
+
+in `.gitignore`.
+
+Commit:
+
+```text
+processing code
+metadata
+small derived assets
+instructions for obtaining the source data
+```
+
+Your README should explain how another researcher could reproduce the processed demo.
+
+---
+
+# 35. README Structure
+
+Use:
+
+```markdown
+# TerraCascade
+
+See the change. Understand the chain.
+
+## NASA Space Apps Challenge
+
+Dancing with the SARs
+
+## Problem
+
+## Solution
+
+## Live Demo
+
+## Demo Region
+
+## NISAR Data
+
+## Features
+
+### Surface Change Explorer
+
+### Time Travel
+
+### Change DNA
+
+### Cascade Mode
+
+## Scientific Methodology
+
+## Evidence Framework
+
+Observed / Derived / Contextual / Potential
+
+## Architecture
+
+## Repository Structure
+
+## Installation
+
+## Running the Scientific Pipeline
+
+## Running the Web Application
+
+## Data Sources
+
+## Limitations
+
+## Team
+
+## Future Work
+```
+
+---
+
+# 36. October MVP Definition of Done
+
+[certain] Do not judge completion by the number of features.
+
+The MVP is finished only when this exact path works:
+
+```text
+Open website
+   ↓
+Press Explore
+   ↓
+See real region
+   ↓
+See NISAR-derived visualization
+   ↓
+Select observation
+   ↓
+See real measurement
+   ↓
+Move timeline
+   ↓
+See visualization change
+   ↓
+See temporal graph
+   ↓
+Open Change DNA
+   ↓
+Understand change characteristics
+   ↓
+Open Cascade
+   ↓
+Understand:
+Observed
+Derived
+Contextual
+Potential
+   ↓
+Inspect real data source
+```
+
+---
+
+# 37. Priority System
+
+## P0 — Cannot submit without these
+
+```text
+Real NISAR data
+Real scientific processing
+Map
+At least one real demonstration
+Measurements
+Data provenance
+Public Git repository
+Working website
+240-second video
+```
+
+## P1 — High-value differentiation
+
+```text
+Timeline
+Change DNA
+Cascade Mode
+Before/after visualization
+Polished UI
+```
+
+## P2 — Only if everything else works
+
+```text
+3D globe
+AI explanation
+additional regions
+contextual datasets
+animations
+```
+
+## P3 — November
+
+```text
+Wildfire
+Wetlands
+Glaciers
+PostGIS
+FastAPI
+automated region selection
+dynamic NISAR search
+advanced processing
+more validation
+```
+
+---
+
+# 38. 240-Second Video Plan
+
+## 0:00–0:20 — Hook
+
+```text
+Earth does not always change dramatically.
+
+Sometimes the first sign is only a subtle movement
+detected from space.
+```
+
+Show Earth/map.
+
+---
+
+## 0:20–0:45 — Problem
+
+```text
+Synthetic Aperture Radar can reveal surface change,
+but the resulting products are difficult for
+non-specialists to interpret.
+```
+
+Show complicated scientific layer briefly.
+
+---
+
+## 0:45–1:05 — TerraCascade
+
+```text
+TerraCascade transforms NISAR observations into
+interactive surface-change stories.
+```
+
+---
+
+## 1:05–2:35 — Real Demo
+
+Show:
+
+```text
+real region
+↓
+real NISAR layer
+↓
+timeline
+↓
+measurements
+↓
+graph
+↓
+Change DNA
+```
+
+Spend most of your video here.
+
+---
+
+## 2:35–3:20 — Cascade Mode
+
+Show:
+
+```text
+OBSERVED
+       ↓
+DERIVED
+       ↓
+CONTEXTUAL
+       ↓
+POTENTIAL
+```
+
+Explain that TerraCascade deliberately distinguishes measurement from interpretation.
+
+---
+
+## 3:20–3:45 — Why it matters
+
+```text
+TerraCascade makes radar observations understandable
+to people who may not normally work with SAR data.
+```
+
+---
+
+## 3:45–3:58 — Closing
+
+```text
+TerraCascade.
+
+See the change.
+Understand the chain.
+```
+
+---
+
+# 39. Submission Checklist
+
+Before submitting:
+
+```text
+[ ] Video < 240 seconds
+[ ] Video link public
+[ ] Git repository public
+[ ] Repository opens in incognito mode
+[ ] README visible
+[ ] Source code present
+[ ] No secrets committed
+[ ] Demo URL working
+[ ] NISAR source credited
+[ ] NASA challenge identified
+[ ] Scientific limitations documented
+[ ] Actual demo shown in video
+[ ] No fabricated scientific values
+[ ] Team names correct
+```
+
+---
+
+# 40. November Expansion
+
+After qualification, expand the same architecture.
+
+## Phase N1 — Better deformation analysis
+
+```text
+more regions
+more observations
+quality filtering
+additional displacement analysis
+scientific validation
+```
+
+## Phase N2 — Context
+
+Add:
+
+```text
+DEM
+land use
+roads
+buildings
+rainfall
+```
+
+## Phase N3 — Second surface-change case
+
+Choose **one**:
+
+```text
+wildfire disturbance
+
+OR
+
+wetland change
+
+OR
+
+glacier motion
+```
+
+Not all three initially.
+
+## Phase N4 — Backend
+
+Then introduce:
+
+```text
+FastAPI
+PostgreSQL
+PostGIS
+object storage
+```
+
+## Phase N5 — Dynamic data
+
+Eventually:
+
+```text
+user selects region
+        ↓
+NISAR search
+        ↓
+available observations
+        ↓
+processing
+        ↓
+visualization
+```
+
+## Phase N6 — 3D
+
+Then consider:
+
+```text
+CesiumJS
+terrain
+3D contextual visualization
+```
+
+## Phase N7 — Ask Terra
+
+[certain] Your existing proposed architecture for AI is appropriately conservative:
+
+```text
+Scientific Algorithm
+        ↓
+Structured results
+        ↓
+Explanation model
+        ↓
+Human-readable response
+```
+
+rather than asking an LLM to infer science directly from a satellite image. :chatgpt-content-reference{index="11"}
+
+Implement that only after the scientific pipeline is reliable.
+
+---
+
+# 41. How to Work With Astra/Codex
+
+[Likely] Do **not** say:
+
+```text
+Build the entire application from this document.
+```
+
+Use a repeating workflow:
+
+```text
+PLAN
+ ↓
+IMPLEMENT ONE PHASE
+ ↓
+RUN
+ ↓
+TEST
+ ↓
+REVIEW
+ ↓
+COMMIT
+ ↓
+NEXT PHASE
+```
+
+---
+
+# 42. The Prompt Pattern to Use Every Time
+
+Give Astra/Codex:
+
+```text
+Read:
+- AGENTS.md
+- PROJECT_GUIDE.md
+- current repository
+
+We are working ONLY on Phase X.
+
+Goal:
+[one concrete result]
+
+Before coding:
+1. inspect relevant files;
+2. explain the implementation plan;
+3. identify assumptions;
+4. identify anything requiring scientific verification.
+
+Then implement.
+
+Constraints:
+- do not work on later phases;
+- do not invent data;
+- do not silently substitute mock values;
+- preserve scientific provenance;
+- add tests;
+- run relevant commands.
+
+At completion report:
+
+1. files created;
+2. files modified;
+3. commands run;
+4. tests run;
+5. results;
+6. remaining problems;
+7. whether Phase X exit criteria are satisfied.
+
+Stop after Phase X.
+```
+
+[Likely] This prompt pattern will save you from Astra enthusiastically implementing half the roadmap before your scientific assumptions are validated.
+
+---
+
+# 43. Useful Codex Review Prompt
+
+After every significant phase:
+
+```text
+Review the current implementation as a skeptical NASA
+Space Apps technical judge.
+
+Do not modify anything.
+
+Look specifically for:
+
+1. scientific claims unsupported by data;
+2. invented or placeholder measurements;
+3. incorrect units;
+4. misleading causality;
+5. inaccessible source attribution;
+6. implementation bugs;
+7. UI elements that imply more certainty than exists;
+8. unnecessary complexity;
+9. features that are incomplete but appear complete;
+10. things likely to fail during a live demo.
+
+Return issues by severity:
+
+CRITICAL
+HIGH
+MEDIUM
+LOW
+
+For every issue provide:
+- file/location;
+- why it matters;
+- recommended fix.
+
+Do not give an overall competition score or ranking.
+```
+
+---
+
+# 44. Useful Codex Simplification Prompt
+
+When things become messy:
+
+```text
+Audit TerraCascade for unnecessary complexity.
+
+Our October MVP is only:
+
+real NISAR data
+→ deformation visualization
+→ timeline
+→ measurements
+→ Change DNA
+→ Cascade Mode
+→ provenance.
+
+Identify everything in the repository that is not required
+for that flow.
+
+Do not delete anything.
+
+Return:
+KEEP
+DEFER
+REMOVE CANDIDATE
+
+and explain each decision.
+```
+
+---
+
+# 45. Useful Scientific Audit Prompt
+
+```text
+Perform a scientific reproducibility audit.
+
+Trace every number visible in the UI backwards:
+
+UI value
+→ JSON field
+→ processing output
+→ calculation
+→ source variable
+→ source NISAR product.
+
+Flag any value that cannot be traced.
+
+Do not modify anything.
+
+The desired result is complete provenance from satellite
+product to user-visible measurement.
+```
+
+---
+
+# 46. Useful Final Demo Audit Prompt
+
+```text
+Assume we have exactly four minutes to demonstrate
+TerraCascade.
+
+Inspect the project and identify the shortest stable path
+that demonstrates:
+
+1. NISAR;
+2. real surface change;
+3. temporal evolution;
+4. Change DNA;
+5. Cascade Mode;
+6. scientific provenance.
+
+Identify anything likely to fail during recording.
+
+Do not redesign the entire application.
+Prioritize demo reliability.
+```
+
+---
+
+# 47. Your Immediate Execution Order
+
+[Likely] With the October 1 deadline, follow this exact order:
+
+```text
+1. Create repo
+        ↓
+2. AGENTS.md
+        ↓
+3. Acquire NISAR data
+        ↓
+4. Inspect file
+        ↓
+5. Extract real scientific layer
+        ↓
+6. Produce real plot
+        ↓
+7. Pick demo region
+        ↓
+8. Generate processed web assets
+        ↓
+9. Build simple Next.js site
+        ↓
+10. Add map
+        ↓
+11. Add timeline
+        ↓
+12. Add measurement chart
+        ↓
+13. Add Change DNA
+        ↓
+14. Add Cascade Mode
+        ↓
+15. Add sources/methodology
+        ↓
+16. Test
+        ↓
+17. Deploy
+        ↓
+18. Record 240-second video
+        ↓
+19. Make Git public
+        ↓
+20. Submit
+```
+
+---
+
+# 48. First Prompt I Would Give Astra Right Now
+
+Copy this first:
+
+```text
+Read AGENTS.md and PROJECT_GUIDE.md.
+
+We are beginning TerraCascade, a NASA Space Apps 2026
+Dancing with the SARs project.
+
+IMPORTANT:
+Do not try to build the entire project.
+
+Our October MVP is:
+
+real NISAR GUNW data
+→ one ground-deformation demonstration
+→ interactive map
+→ temporal observations
+→ measurement visualization
+→ Change DNA
+→ Cascade Mode
+→ evidence provenance.
+
+For this task perform ONLY repository initialization.
+
+Create the agreed repository structure.
+
+Create:
+- README.md skeleton
+- data/README.md
+- science/
+- notebooks/
+- web/
+- tests/
+- docs/
+- submission/
+
+Add an appropriate .gitignore.
+
+Do not download data.
+Do not create scientific results.
+Do not build the frontend yet.
+Do not introduce mock scientific values.
+
+After creating the structure:
+
+1. print the resulting tree;
+2. explain every directory;
+3. verify git status;
+4. tell me exactly what information/data is required
+   before starting Phase 1.
+
+Stop there.
+```
+
+Then give it the **Phase 1 Data Discovery prompt** from this guide.
+
+---
+
+## The most important milestone
+
+[Likely] Do **not** celebrate when the website looks good.
+
+Celebrate when you can truthfully say:
+
+> **“This colored surface-change layer came from this real NISAR product, using this documented variable, these processing steps, these units, and this exact code.”**
+
+[certain] Once that is true, the rest of TerraCascade becomes an interface and storytelling problem. Your proposal's central value is exactly that transition from raw radar measurement into a transparent, understandable surface-change story. :chatgpt-content-reference{index="12"}

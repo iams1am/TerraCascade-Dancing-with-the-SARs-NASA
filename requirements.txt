@@ -1,0 +1,4 @@
+h5py==3.16.0
+matplotlib==3.11.2
+numpy==2.2.3
+pyproj==3.7.1

@@ -1,0 +1,51 @@
+{
+  "event_id": "TC001",
+  "nodes": [
+    {
+      "id": "observation",
+      "label": "Interferometric phase observed",
+      "evidence": "OBSERVED",
+      "explanation": "The verified GUNW product contains an unwrapped phase layer in radians.",
+      "source": "science/LSAR/GUNW/grids/frequencyA/unwrappedInterferogram/HH/unwrappedPhase",
+      "limitation": "Phase is not displayed as displacement."
+    },
+    {
+      "id": "quality",
+      "label": "Quality-screened pixels retained",
+      "evidence": "DERIVED",
+      "explanation": "The product mask and coherence threshold select pixels for the preview.",
+      "source": "science/LSAR/GUNW/grids/frequencyA/unwrappedInterferogram/mask; science/LSAR/GUNW/grids/frequencyA/unwrappedInterferogram/HH/coherenceMagnitude",
+      "limitation": "A threshold does not remove every source of uncertainty."
+    },
+    {
+      "id": "context",
+      "label": "Southern California context",
+      "evidence": "CONTEXTUAL",
+      "explanation": "The geocoded footprint is located in Southern California.",
+      "source": "GUNW boundingPolygon and EPSG:32611 geocoding",
+      "limitation": "Context does not establish a deformation cause."
+    },
+    {
+      "id": "next-step",
+      "label": "Further investigation may be warranted",
+      "evidence": "POTENTIAL",
+      "explanation": "Additional compatible interferograms and ground context would be needed to assess persistence.",
+      "source": "TerraCascade limitation policy",
+      "limitation": "This is not a prediction, diagnosis, or hazard alert."
+    }
+  ],
+  "edges": [
+    {
+      "source": "observation",
+      "target": "quality"
+    },
+    {
+      "source": "quality",
+      "target": "context"
+    },
+    {
+      "source": "context",
+      "target": "next-step"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "id": "TC001",
+  "title": "Southern California phase demonstration",
+  "location": "Southern California, United States",
+  "type": "ground_deformation",
+  "summary": "A verified GUNW interferometric-phase demonstration region.",
+  "evidence_level": "OBSERVED",
+  "source_product": "NISAR_L2_PR_GUNW_001_030_A_019_002_2000_SH_20081012T060911_20081012T060925_20081127T061000_20081127T061014_D00404_N_F_J_001",
+  "source_url": "https://nisar.asf.earthdatacloud.nasa.gov/NISAR-SAMPLE-DATA/GUNW/NISAR_L2_PR_GUNW_001_030_A_019_002_2000_SH_20081012T060911_20081012T060925_20081127T061000_20081127T061014_D00404_N_F_J_001/NISAR_L2_PR_GUNW_001_030_A_019_002_2000_SH_20081012T060911_20081012T060925_20081127T061000_20081127T061014_D00404_N_F_J_001.h5",
+  "projection": "EPSG:32611",
+  "bounds": {
+    "x_min": 395040.0,
+    "y_min": 3830060.0,
+    "x_max": 430000.0,
+    "y_max": 3874940.0
+  },
+  "center": {
+    "latitude": 34.79885009842582,
+    "longitude": -117.96446498541614
+  },
+  "geographic_bounds": {
+    "south": 34.607019602756274,
+    "west": -118.1503622087306,
+    "north": 35.01468041494573,
+    "east": -117.76349645389817
+  },
+  "context_bounds": {
+    "south": 33.87323014081525,
+    "west": -120.25036220873059,
+    "north": 35.74846987688675,
+    "east": -115.66349645389818
+  },
+  "imagery": "/data/imagery/demo-region.png",
+  "map_overlay": "/data/imagery/phase-overlay.png",
+  "map_overlay_units": "radians",
+  "sources": [
+    "NASA/ASF NISAR sample GUNW product"
+  ]
+}

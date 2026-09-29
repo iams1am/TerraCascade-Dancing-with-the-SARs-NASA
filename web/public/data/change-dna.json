@@ -1,0 +1,36 @@
+{
+  "event_id": "TC001",
+  "indicators": [
+    {
+      "name": "Data quality coverage",
+      "value": 0.8151578673686605,
+      "display_percent": 81.5,
+      "units": "fraction of pixels",
+      "evidence_level": "DERIVED",
+      "calculation": "Valid pixels after the documented mask and coherence threshold divided by AOI pixels.",
+      "source": "GUNW mask and coherenceMagnitude"
+    },
+    {
+      "name": "Coherence",
+      "value": 0.4764252007007599,
+      "display_percent": 47.6,
+      "units": "unitless",
+      "evidence_level": "OBSERVED",
+      "calculation": "Median coherenceMagnitude over pixels passing the quality mask.",
+      "source": "science/LSAR/GUNW/grids/frequencyA/unwrappedInterferogram/HH/coherenceMagnitude"
+    },
+    {
+      "name": "Temporal separation",
+      "value": 46,
+      "display_percent": null,
+      "units": "days",
+      "evidence_level": "OBSERVED",
+      "calculation": "Product temporal baseline between reference and secondary acquisitions.",
+      "source": "science/LSAR/GUNW/metadata/orbit/temporalBaseline"
+    }
+  ],
+  "omitted": [
+    "Displacement magnitude: no documented conversion was applied from phase radians.",
+    "Persistence: one interferogram pair is insufficient for a persistent time series."
+  ]
+}

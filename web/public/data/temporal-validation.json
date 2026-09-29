@@ -1,0 +1,20 @@
+{
+  "source_file": "data\\raw\\NISAR_L2_PR_GUNW_001_030_A_019_002_2000_SH_20081012T060911_20081012T060925_20081127T061000_20081127T061014_D00404_N_F_J_001.h5",
+  "source_product": "NISAR_L2_PR_GUNW_001_030_A_019_002_2000_SH_20081012T060911_20081012T060925_20081127T061000_20081127T061014_D00404_N_F_J_001",
+  "observations": [
+    {
+      "id": "reference",
+      "date": "2008-10-12T06:09:11.567105263",
+      "role": "reference_acquisition"
+    },
+    {
+      "id": "secondary",
+      "date": "2008-11-27T06:10:00.442763158",
+      "role": "secondary_acquisition"
+    }
+  ],
+  "temporal_baseline_days": 46,
+  "compatible_pair": true,
+  "persistence_claim": false,
+  "limitation": "Only one interferogram pair is available. This validates temporal separation but does not establish persistence across multiple pairs."
+}

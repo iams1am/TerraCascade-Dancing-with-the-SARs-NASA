@@ -1,0 +1,39 @@
+{
+  "event_id": "TC001",
+  "measurement": {
+    "name": "Unwrapped interferometric phase",
+    "units": "radians",
+    "value_source": "statistics.median",
+    "statistics": {
+      "valid_pixel_count": 200656,
+      "minimum": -3.4313859939575195,
+      "maximum": 6.907875061035156,
+      "median": 2.454659938812256,
+      "mean": 2.4192397594451904
+    }
+  },
+  "quality": {
+    "coherence": {
+      "valid_pixel_count": 200656,
+      "minimum": 0.30000993609428406,
+      "maximum": 0.9733239412307739,
+      "median": 0.4764252007007599,
+      "mean": 0.48397883772850037
+    },
+    "valid_pixel_ratio": 0.8151578673686605,
+    "threshold": 0.3
+  },
+  "observation_pair": {
+    "reference": "2008-10-12T06:09:11.567105263",
+    "secondary": "2008-11-27T06:10:00.442763158",
+    "temporal_baseline_days": 46
+  },
+  "imagery": "/data/imagery/demo-region.png",
+  "evidence_level": "OBSERVED",
+  "limitations": [
+    "This is a NASA/ASF sample product with historical surrogate-era acquisition dates.",
+    "The displayed scientific layer is unwrapped phase in radians, not converted displacement.",
+    "One interferogram pair is available; a persistent multi-observation time series is not established.",
+    "Radar phase alone does not establish a deformation cause or predict a disaster."
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "project": "TerraCascade",
+  "phase": 11,
+  "status": "processed_demo_available",
+  "measurementLayer": "science/LSAR/GUNW/grids/frequencyA/unwrappedInterferogram/HH/unwrappedPhase",
+  "sourceProduct": "NISAR_L2_PR_GUNW_001_030_A_019_002_2000_SH_20081012T060911_20081012T060925_20081127T061000_20081127T061014_D00404_N_F_J_001",
+  "message": "A verified GUNW demonstration region is available.",
+  "evidencePolicy": [
+    "OBSERVED",
+    "DERIVED",
+    "CONTEXTUAL",
+    "POTENTIAL"
+  ]
+}

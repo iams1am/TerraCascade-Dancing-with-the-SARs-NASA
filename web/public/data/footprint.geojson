@@ -1,0 +1,41 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "event_id": "TC001",
+        "evidence_level": "DERIVED",
+        "projection": "EPSG:32611",
+        "source": "AOI bounds transformed from projected GUNW coordinates"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -118.14475233485838,
+              34.607019602756274
+            ],
+            [
+              -117.76349645389817,
+              34.61000133685048
+            ],
+            [
+              -117.76723853525262,
+              35.01468041494573
+            ],
+            [
+              -118.1503622087306,
+              35.011653679552076
+            ],
+            [
+              -118.14475233485838,
+              34.607019602756274
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}
