@@ -15,11 +15,7 @@ support.
 
 ## Website Live on:
 
-[https://terra-cascade-dancing-with-the-sa-r.vercel.app/ .
-
-[Run the web app](#quick-start) ·
-[Review the methodology](docs/methodology/README.md) ·
-[Read the validation audit](docs/validation/phase-13-audit.md)
+# | https://terra-cascade-dancing-with-the-sa-r.vercel.app/ |
 
 ---
 
